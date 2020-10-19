@@ -19,6 +19,85 @@
     <link href="another/Buttons/css/buttons.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/Responsive/css/responsive.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/font/css/all.css" rel="stylesheet" />
+
+    <style>
+        #myImg{
+            border-radius:5px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        #myImg:hover {opacity:0.7;}
+
+        .zoom{
+            display:none;
+            position:fixed;
+            z-index:1;
+            padding-top:100px;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            overflow:auto;
+            background-color:rgb(0,0,0);
+            background-color:rgba(0,0,0,0.9);
+        }
+
+        .zoom-content{
+            margin:auto;
+            display:block;
+            width:80%;
+            max-width:700px;
+        }
+
+        #caption{
+            margin:auto;
+            display:block;
+            width:80%;
+            max-width:700px;
+            text-align:center;
+            color:#ccc;
+            padding:10px 0;
+            height:150px;
+        }
+
+        .zoom-content, #caption{
+            animation-name:zoom;
+            animation-duration:0.6s;
+        }
+
+        @keyframes zoom{
+            from{
+                transform:scale(0)
+            }
+            to{
+                transform:scale(1)
+            }
+        }
+
+        .close{
+            position:absolute;
+            top:15px;
+            right:35px;
+            color:#f1f1f1;
+            font-size:40px;
+            font-weight:bold;
+            transition:0.3s
+        }
+
+        .close:hover,
+        .close:focus{
+            color:#bbb;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+        @media only screen and (max-width:700px){
+            .zoom-content{
+                width:100%;
+            }
+        }
+    </style>
 </head>
 <body class="bd">
     <form id="form1" runat="server">
@@ -128,7 +207,7 @@
                                     <td><%# Eval ("Cal_Period") %></td>
                                     <td><%# Eval ("Cal_ID") %></td>
                                     <td><%# Eval ("Cal_Supplier") %></td>
-                                    <td><img src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" /></td>
+                                    <td><img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" /></td>
                                     <td><%# Eval ("Manual_Doc_Attachment") %></td>
                                     <td><%# Eval ("By_Whom") %></td>
                                     <td><%# Eval ("Last_Update") %></td>
@@ -151,6 +230,11 @@
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
+                <div id="myModal" class="zoom">
+                    <span class="close">&times;</span>
+                    <img class="zoom-content" id="img"/>
+                    <div id="caption"></div>
+                </div>
             </div>
 
             <!--Modal Create-->
@@ -690,6 +774,23 @@
             $("#ModalEdit #txtEditR").val(_re);
             $("#ModalEdit #txtEditSN").attr("ReadOnly", true);;
         });
+
+        var modal = document.getElementById("myModal");
+
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img");
+        var captionText = document.getElementById("caption");
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
     </script>
     </form>
 </body>
