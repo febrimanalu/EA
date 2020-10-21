@@ -218,7 +218,7 @@
                                         data-bu="<%# Eval("BU") %>" data-line="<%# Eval("BU_Line") %>" data-status="<%# Eval("Status") %>" data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("CO") %>"
                                         data-eam="<%# Eval("EAM") %>" data-jn="<%# Eval("Job_No") %>" data-agid="<%# Eval("Asset_Group_ID") %>" data-agd="<%# Eval("Asset_Group_Desc") %>" data-manu="<%# Eval("Manufacturer") %>" data-ao="<%# Eval("Asset_Owner") %>"
                                         data-pm="<%# Eval("PM") %>" data-pmp="<%# Eval("PM_Period") %>" data-cal="<%# Eval("Calibration") %>" data-cp="<%# Eval("Cal_Period") %>" data-cid="<%# Eval("Cal_ID") %>" data-cs="<%# Eval("Cal_Supplier") %>"
-                                        data-ep="<%# Eval("Equip_picture") %>" data-mda=" <%# Eval("Manual_Doc_Attachment") %>" data-bw="<%# Eval("By_Whom") %>" data-lu="<%# Eval("Last_Update") %>" data-re="<%# Eval("Remark") %>">
+                                        data-ep="<%# Eval("Equip_picture") %>" data-mda="<%# Eval("Manual_Doc_Attachment") %>" data-bw="<%# Eval("By_Whom") %>" data-lu="<%# Eval("Last_Update") %>" data-re="<%# Eval("Remark") %>">
                                         </a> 
                                          &nbsp &nbsp &nbsp
                                         <asp:LinkButton runat="server" ID="lnkDelete" CommandArgument='<%# Eval("SN") %>' OnClick="lnkDelete_Click" class="fas fa-trash" OnClientClick="return confirm('Do you want to delete this record?');"></asp:LinkButton>
