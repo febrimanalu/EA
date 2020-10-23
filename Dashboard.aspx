@@ -209,7 +209,7 @@
                                     <td><%# Eval ("Cal_Supplier") %></td>
                                     <td><img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" /></td>
                                     <td><%# Eval ("Manual_Doc_Attachment") %></td>
-                                    <td><%# Eval ("By_Whom") %></td>
+                                    <td><%# Eval ("By_Whom")  %></td>
                                     <td><%# Eval ("Last_Update") %></td>
                                     <td><%# Eval ("Remark") %></td>
                                     <td>
@@ -331,13 +331,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label25" runat="server" Text="Job_No"></asp:Label>
+                                                <asp:Label ID="Label11" runat="server" Text="Job_No"></asp:Label>
                                                 <asp:TextBox ID="txtJN" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label26" runat="server" Text="Asset_Group_ID"></asp:Label>
+                                                <asp:Label ID="Label12" runat="server" Text="Asset_Group_ID"></asp:Label>
                                                 <asp:DropDownList ID="ddlAGID" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>ICT</asp:ListItem>
@@ -350,13 +350,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label11" runat="server" Text="Asset_Group_Desc"></asp:Label>
+                                                <asp:Label ID="Label13" runat="server" Text="Asset_Group_Desc"></asp:Label>
                                                 <asp:TextBox ID="txtAGD" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label27" runat="server" Text="Manufacturer"></asp:Label>
+                                                <asp:Label ID="Label14" runat="server" Text="Manufacturer"></asp:Label>
                                                 <asp:DropDownList ID="ddlManu" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>SEICO</asp:ListItem>
@@ -367,7 +367,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label28" runat="server" Text="Asset_Owner"></asp:Label>
+                                                <asp:Label ID="Label15" runat="server" Text="Asset_Owner"></asp:Label>
                                                 <asp:DropDownList ID="ddlAO" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>Consigned</asp:ListItem>
@@ -377,7 +377,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label29" runat="server" Text="PM"></asp:Label>
+                                                <asp:Label ID="Label16" runat="server" Text="PM"></asp:Label>
                                                 <asp:DropDownList ID="ddlPM" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>YES</asp:ListItem>
@@ -388,13 +388,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label30" runat="server" Text="PM_Period"></asp:Label>
+                                                <asp:Label ID="Label17" runat="server" Text="PM_Period"></asp:Label>
                                                 <asp:TextBox ID="txtPMP" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label31" runat="server" Text="Calibration"></asp:Label>
+                                                <asp:Label ID="Label18" runat="server" Text="Calibration"></asp:Label>
                                                 <asp:DropDownList ID="ddlCal" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>YES</asp:ListItem>
@@ -404,43 +404,43 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label32" runat="server" Text="Cal_Period"></asp:Label>
+                                                <asp:Label ID="Label19" runat="server" Text="Cal_Period"></asp:Label>
                                                 <asp:TextBox ID="txtCP" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label33" runat="server" Text="Cal_ID"></asp:Label>
+                                                <asp:Label ID="Label20" runat="server" Text="Cal_ID"></asp:Label>
                                                 <asp:TextBox ID="txtCID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label34" runat="server" Text="Cal_Supplier"></asp:Label>
+                                                <asp:Label ID="Label21" runat="server" Text="Cal_Supplier"></asp:Label>
                                                 <asp:TextBox ID="txtCS" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label23" runat="server" Text="Equip_Picture"></asp:Label>
+                                                <asp:Label ID="Label22" runat="server" Text="Equip_Picture"></asp:Label>
                                                 <asp:FileUpload ID="txtEP" runat="server" />
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label35" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
+                                                <asp:Label ID="Label23" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
                                                 <asp:TextBox ID="txtMDA" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label36" runat="server" Text="By_Whom"></asp:Label>
+                                                <asp:Label ID="Label24" runat="server" Text="By_Whom"></asp:Label>
                                                 <asp:TextBox ID="txtBW" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label38" runat="server" Text="Remark"></asp:Label>
+                                                <asp:Label ID="Label25" runat="server" Text="Remark"></asp:Label>
                                                 <asp:TextBox ID="txtR" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -472,19 +472,19 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label12" runat="server" Text="SN"></asp:Label>
+                                                <asp:Label ID="Label26" runat="server" Text="SN"></asp:Label>
                                                 <asp:TextBox ID="txtEditSN" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label13" runat="server" Text="Description"></asp:Label>
+                                                <asp:Label ID="Label27" runat="server" Text="Description"></asp:Label>
                                                 <asp:TextBox ID="txtEditDesc" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label14" runat="server" Text="Family"></asp:Label>
+                                                <asp:Label ID="Label28" runat="server" Text="Family"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditFam" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>BOOK3</asp:ListItem>
@@ -495,7 +495,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label15" runat="server" Text="BU"></asp:Label>
+                                                <asp:Label ID="Label29" runat="server" Text="BU"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditBU" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>BU 1</asp:ListItem>
@@ -508,13 +508,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label16" runat="server" Text="BU_Line"></asp:Label>
+                                                <asp:Label ID="Label30" runat="server" Text="BU_Line"></asp:Label>
                                                 <asp:TextBox ID="txtEditBUL" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label17" runat="server" Text="Status"></asp:Label>
+                                                <asp:Label ID="Label31" runat="server" Text="Status"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditS" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>ACTIVE</asp:ListItem>
@@ -526,37 +526,37 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label18" runat="server" Text="Owner_Engineer"></asp:Label>
+                                                <asp:Label ID="Label32" runat="server" Text="Owner_Engineer"></asp:Label>
                                                 <asp:TextBox ID="txtEditOE" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label19" runat="server" Text="RF_ID"></asp:Label>
+                                                <asp:Label ID="Label33" runat="server" Text="RF_ID"></asp:Label>
                                                 <asp:TextBox ID="txtEditRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label20" runat="server" Text="CO"></asp:Label>
+                                                <asp:Label ID="Label34" runat="server" Text="CO"></asp:Label>
                                                 <asp:TextBox ID="txtEditCO" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label21" runat="server" Text="EAM"></asp:Label>
+                                                <asp:Label ID="Label35" runat="server" Text="EAM"></asp:Label>
                                                 <asp:TextBox ID="txtEditEAM" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label22" runat="server" Text="Job_No"></asp:Label>
+                                                <asp:Label ID="Label36" runat="server" Text="Job_No"></asp:Label>
                                                 <asp:TextBox ID="txtEditJN" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label24" runat="server" Text="Asset_Group_ID"></asp:Label>
+                                                <asp:Label ID="Label37" runat="server" Text="Asset_Group_ID"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditAGID" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>ICT</asp:ListItem>
@@ -569,13 +569,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label39" runat="server" Text="Asset_Group_Desc"></asp:Label>
+                                                <asp:Label ID="Label38" runat="server" Text="Asset_Group_Desc"></asp:Label>
                                                 <asp:TextBox ID="txtEditAGD" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label40" runat="server" Text="Manufacturer"></asp:Label>
+                                                <asp:Label ID="Label39" runat="server" Text="Manufacturer"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditManu" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>SEICO</asp:ListItem>
@@ -586,7 +586,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label41" runat="server" Text="Asset_Owner"></asp:Label>
+                                                <asp:Label ID="Label40" runat="server" Text="Asset_Owner"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditAO" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>Consigned</asp:ListItem>
@@ -596,7 +596,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label42" runat="server" Text="PM"></asp:Label>
+                                                <asp:Label ID="Label41" runat="server" Text="PM"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditPM" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>YES</asp:ListItem>
@@ -607,13 +607,13 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label43" runat="server" Text="PM_Period"></asp:Label>
+                                                <asp:Label ID="Label42" runat="server" Text="PM_Period"></asp:Label>
                                                 <asp:TextBox ID="txtEditPMP" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label44" runat="server" Text="Calibration"></asp:Label>
+                                                <asp:Label ID="Label43" runat="server" Text="Calibration"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditCal" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>YES</asp:ListItem>
@@ -623,31 +623,31 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label45" runat="server" Text="Cal_Period"></asp:Label>
+                                                <asp:Label ID="Label44" runat="server" Text="Cal_Period"></asp:Label>
                                                 <asp:TextBox ID="txtEditCP" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label46" runat="server" Text="Cal_ID"></asp:Label>
+                                                <asp:Label ID="Label45" runat="server" Text="Cal_ID"></asp:Label>
                                                 <asp:TextBox ID="txtEditCID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label47" runat="server" Text="Cal_Supplier"></asp:Label>
+                                                <asp:Label ID="Label46" runat="server" Text="Cal_Supplier"></asp:Label>
                                                 <asp:TextBox ID="txtEditCS" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label48" runat="server" Text="Equip_Picture"></asp:Label>
+                                                <asp:Label ID="Label47" runat="server" Text="Equip_Picture"></asp:Label>
                                                 <asp:FileUpload ID="txtEditEP" runat="server" />
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label37" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
+                                                <asp:Label ID="Label48" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
                                                 <asp:TextBox ID="txtEditMDA" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>

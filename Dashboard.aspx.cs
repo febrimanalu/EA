@@ -154,7 +154,7 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, BU=@BU, BU_Line=@BU_Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, BU=@BU, BU_Line=@BU_Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;

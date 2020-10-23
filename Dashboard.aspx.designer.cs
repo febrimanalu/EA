@@ -213,13 +213,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEAM;
 
         /// <summary>
-        /// Label25 control.
+        /// Label11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label25;
+        protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
         /// txtJN control.
@@ -231,13 +231,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtJN;
 
         /// <summary>
-        /// Label26 control.
+        /// Label12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label26;
+        protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
         /// ddlAGID control.
@@ -249,13 +249,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlAGID;
 
         /// <summary>
-        /// Label11 control.
+        /// Label13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
         /// txtAGD control.
@@ -267,13 +267,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtAGD;
 
         /// <summary>
-        /// Label27 control.
+        /// Label14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label27;
+        protected global::System.Web.UI.WebControls.Label Label14;
 
         /// <summary>
         /// ddlManu control.
@@ -285,13 +285,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlManu;
 
         /// <summary>
-        /// Label28 control.
+        /// Label15 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label28;
+        protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
         /// ddlAO control.
@@ -303,13 +303,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlAO;
 
         /// <summary>
-        /// Label29 control.
+        /// Label16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label29;
+        protected global::System.Web.UI.WebControls.Label Label16;
 
         /// <summary>
         /// ddlPM control.
@@ -321,13 +321,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlPM;
 
         /// <summary>
-        /// Label30 control.
+        /// Label17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label30;
+        protected global::System.Web.UI.WebControls.Label Label17;
 
         /// <summary>
         /// txtPMP control.
@@ -339,13 +339,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtPMP;
 
         /// <summary>
-        /// Label31 control.
+        /// Label18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label31;
+        protected global::System.Web.UI.WebControls.Label Label18;
 
         /// <summary>
         /// ddlCal control.
@@ -357,13 +357,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlCal;
 
         /// <summary>
-        /// Label32 control.
+        /// Label19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label32;
+        protected global::System.Web.UI.WebControls.Label Label19;
 
         /// <summary>
         /// txtCP control.
@@ -375,13 +375,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtCP;
 
         /// <summary>
-        /// Label33 control.
+        /// Label20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label33;
+        protected global::System.Web.UI.WebControls.Label Label20;
 
         /// <summary>
         /// txtCID control.
@@ -393,13 +393,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtCID;
 
         /// <summary>
-        /// Label34 control.
+        /// Label21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label34;
+        protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
         /// txtCS control.
@@ -411,13 +411,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtCS;
 
         /// <summary>
-        /// Label23 control.
+        /// Label22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
+        protected global::System.Web.UI.WebControls.Label Label22;
 
         /// <summary>
         /// txtEP control.
@@ -429,13 +429,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.FileUpload txtEP;
 
         /// <summary>
-        /// Label35 control.
+        /// Label23 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label35;
+        protected global::System.Web.UI.WebControls.Label Label23;
 
         /// <summary>
         /// txtMDA control.
@@ -447,13 +447,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtMDA;
 
         /// <summary>
-        /// Label36 control.
+        /// Label24 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label36;
+        protected global::System.Web.UI.WebControls.Label Label24;
 
         /// <summary>
         /// txtBW control.
@@ -465,13 +465,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtBW;
 
         /// <summary>
-        /// Label38 control.
+        /// Label25 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label38;
+        protected global::System.Web.UI.WebControls.Label Label25;
 
         /// <summary>
         /// txtR control.
@@ -492,13 +492,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.Button btnSave;
 
         /// <summary>
-        /// Label12 control.
+        /// Label26 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label Label26;
 
         /// <summary>
         /// txtEditSN control.
@@ -510,13 +510,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditSN;
 
         /// <summary>
-        /// Label13 control.
+        /// Label27 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
+        protected global::System.Web.UI.WebControls.Label Label27;
 
         /// <summary>
         /// txtEditDesc control.
@@ -528,13 +528,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditDesc;
 
         /// <summary>
-        /// Label14 control.
+        /// Label28 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
+        protected global::System.Web.UI.WebControls.Label Label28;
 
         /// <summary>
         /// ddlEditFam control.
@@ -546,13 +546,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditFam;
 
         /// <summary>
-        /// Label15 control.
+        /// Label29 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label15;
+        protected global::System.Web.UI.WebControls.Label Label29;
 
         /// <summary>
         /// ddlEditBU control.
@@ -564,13 +564,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditBU;
 
         /// <summary>
-        /// Label16 control.
+        /// Label30 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label16;
+        protected global::System.Web.UI.WebControls.Label Label30;
 
         /// <summary>
         /// txtEditBUL control.
@@ -582,13 +582,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditBUL;
 
         /// <summary>
-        /// Label17 control.
+        /// Label31 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label17;
+        protected global::System.Web.UI.WebControls.Label Label31;
 
         /// <summary>
         /// ddlEditS control.
@@ -600,13 +600,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditS;
 
         /// <summary>
-        /// Label18 control.
+        /// Label32 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label18;
+        protected global::System.Web.UI.WebControls.Label Label32;
 
         /// <summary>
         /// txtEditOE control.
@@ -618,13 +618,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditOE;
 
         /// <summary>
-        /// Label19 control.
+        /// Label33 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
+        protected global::System.Web.UI.WebControls.Label Label33;
 
         /// <summary>
         /// txtEditRFID control.
@@ -636,13 +636,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditRFID;
 
         /// <summary>
-        /// Label20 control.
+        /// Label34 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
+        protected global::System.Web.UI.WebControls.Label Label34;
 
         /// <summary>
         /// txtEditCO control.
@@ -654,13 +654,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditCO;
 
         /// <summary>
-        /// Label21 control.
+        /// Label35 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Label Label35;
 
         /// <summary>
         /// txtEditEAM control.
@@ -672,13 +672,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditEAM;
 
         /// <summary>
-        /// Label22 control.
+        /// Label36 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
+        protected global::System.Web.UI.WebControls.Label Label36;
 
         /// <summary>
         /// txtEditJN control.
@@ -690,13 +690,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditJN;
 
         /// <summary>
-        /// Label24 control.
+        /// Label37 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Label Label37;
 
         /// <summary>
         /// ddlEditAGID control.
@@ -708,13 +708,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditAGID;
 
         /// <summary>
-        /// Label39 control.
+        /// Label38 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label39;
+        protected global::System.Web.UI.WebControls.Label Label38;
 
         /// <summary>
         /// txtEditAGD control.
@@ -726,13 +726,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditAGD;
 
         /// <summary>
-        /// Label40 control.
+        /// Label39 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label40;
+        protected global::System.Web.UI.WebControls.Label Label39;
 
         /// <summary>
         /// ddlEditManu control.
@@ -744,13 +744,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditManu;
 
         /// <summary>
-        /// Label41 control.
+        /// Label40 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label41;
+        protected global::System.Web.UI.WebControls.Label Label40;
 
         /// <summary>
         /// ddlEditAO control.
@@ -762,13 +762,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditAO;
 
         /// <summary>
-        /// Label42 control.
+        /// Label41 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label42;
+        protected global::System.Web.UI.WebControls.Label Label41;
 
         /// <summary>
         /// ddlEditPM control.
@@ -780,13 +780,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditPM;
 
         /// <summary>
-        /// Label43 control.
+        /// Label42 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label43;
+        protected global::System.Web.UI.WebControls.Label Label42;
 
         /// <summary>
         /// txtEditPMP control.
@@ -798,13 +798,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditPMP;
 
         /// <summary>
-        /// Label44 control.
+        /// Label43 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label44;
+        protected global::System.Web.UI.WebControls.Label Label43;
 
         /// <summary>
         /// ddlEditCal control.
@@ -816,13 +816,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.DropDownList ddlEditCal;
 
         /// <summary>
-        /// Label45 control.
+        /// Label44 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label45;
+        protected global::System.Web.UI.WebControls.Label Label44;
 
         /// <summary>
         /// txtEditCP control.
@@ -834,13 +834,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditCP;
 
         /// <summary>
-        /// Label46 control.
+        /// Label45 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label46;
+        protected global::System.Web.UI.WebControls.Label Label45;
 
         /// <summary>
         /// txtEditCID control.
@@ -852,13 +852,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditCID;
 
         /// <summary>
-        /// Label47 control.
+        /// Label46 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label47;
+        protected global::System.Web.UI.WebControls.Label Label46;
 
         /// <summary>
         /// txtEditCS control.
@@ -870,13 +870,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.TextBox txtEditCS;
 
         /// <summary>
-        /// Label48 control.
+        /// Label47 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label48;
+        protected global::System.Web.UI.WebControls.Label Label47;
 
         /// <summary>
         /// txtEditEP control.
@@ -888,13 +888,13 @@ namespace EA
         protected global::System.Web.UI.WebControls.FileUpload txtEditEP;
 
         /// <summary>
-        /// Label37 control.
+        /// Label48 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label37;
+        protected global::System.Web.UI.WebControls.Label Label48;
 
         /// <summary>
         /// txtEditMDA control.
