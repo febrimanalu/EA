@@ -1824,6 +1824,7 @@
     <Compile Include="Classes\ClsDashboard.cs" />
     <Compile Include="Classes\ClsLogin.cs" />
     <Compile Include="Classes\ClsModule.cs" />
+    <Compile Include="Classes\ClsUser.cs" />
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

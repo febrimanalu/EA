@@ -218,7 +218,7 @@
                                         data-bu="<%# Eval("BU") %>" data-line="<%# Eval("BU_Line") %>" data-status="<%# Eval("Status") %>" data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("CO") %>"
                                         data-eam="<%# Eval("EAM") %>" data-jn="<%# Eval("Job_No") %>" data-agid="<%# Eval("Asset_Group_ID") %>" data-agd="<%# Eval("Asset_Group_Desc") %>" data-manu="<%# Eval("Manufacturer") %>" data-ao="<%# Eval("Asset_Owner") %>"
                                         data-pm="<%# Eval("PM") %>" data-pmp="<%# Eval("PM_Period") %>" data-cal="<%# Eval("Calibration") %>" data-cp="<%# Eval("Cal_Period") %>" data-cid="<%# Eval("Cal_ID") %>" data-cs="<%# Eval("Cal_Supplier") %>"
-                                        data-ep="<%# Eval("Equip_picture") %>" data-mda="<%# Eval("Manual_Doc_Attachment") %>" data-bw="<%# Eval("By_Whom") %>" data-lu="<%# Eval("Last_Update") %>" data-re="<%# Eval("Remark") %>">
+                                        data-ep="<%# Eval("Equip_picture") %>" data-mdca="<%# Eval("Manual_Doc_Attachment") %>" data-bw="<%# Eval("By_Whom") %>" data-lsu="<%# Eval("Last_Update") %>" data-r="<%# Eval("Remark") %>">
                                         </a> 
                                          &nbsp &nbsp &nbsp
                                         <asp:LinkButton runat="server" ID="lnkDelete" CommandArgument='<%# Eval("SN") %>' OnClick="lnkDelete_Click" class="fas fa-trash" OnClientClick="return confirm('Do you want to delete this record?');"></asp:LinkButton>
@@ -648,19 +648,19 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label48" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
-                                                <asp:TextBox ID="txtEditMDA" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditMDCA" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label49" runat="server" Text="By_Whom"></asp:Label>
-                                                <asp:TextBox ID="txtEditBW" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditBWH" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label50" runat="server" Text="Remark"></asp:Label>
-                                                <asp:TextBox ID="txtEditR" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEditRE" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -741,10 +741,10 @@
             var _cid = $(this).data("cid");
             var _cs = $(this).data("cs");
             var _ep = $(this).data("ep");
-            var _mda = $(this).data("mda");
+            var _mdca = $(this).data("mdca");
             var _bw = $(this).data("bw");
-            var _lu = $(this).data("lu");
-            var _re = $(this).data("re");
+            var _lsu = $(this).data("lsu");
+            var _r = $(this).data("r");
 
             $("#ModalEdit #txtEditSN").val(_id);
             $("#ModalEdit #txtEditDesc").val(_nama);
@@ -768,10 +768,10 @@
             $("#ModalEdit #txtEditCID").val(_cid);
             $("#ModalEdit #txtEditCS").val(_cs);
             $("#ModalEdit #txtEditEP").val(_ep);
-            $("#ModalEdit #txtEditMDA").val(_mda);
-            $("#ModalEdit #txtEditBW").val(_bw);
-            $("#ModalEdit #txtEditLU").val(_lu);
-            $("#ModalEdit #txtEditR").val(_re);
+            $("#ModalEdit #txtEditMDCA").val(_mdca);
+            $("#ModalEdit #txtEditBWH").val(_bw);
+            $("#ModalEdit #txtEditLU").val(_lsu);
+            $("#ModalEdit #txtEditRE").val(_r);
             $("#ModalEdit #txtEditSN").attr("ReadOnly", true);;
         });
 

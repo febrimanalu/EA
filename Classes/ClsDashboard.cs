@@ -34,7 +34,7 @@ namespace EA.Classes
             }
         }
 
-        public static void EditData(string nama, string fam, string bu, string line, string status, string oe, int rfid, int co, int eam, string jn, string agid, string agd, string manu, string ao, string pm, string pmp, string cal, string cp, string cid, string cs, string ep, string mda, string bw, string lu, string re, string id)
+        public static void EditData(string nama, string fam, string bu, string line, string status, string oe, int rfid, int co, int eam, string jn, string agid, string agd, string manu, string ao, string pm, string pmp, string cal, string cp, string cid, string cs, string ep, string mdca, string bw, string lsu, string r, string id)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace EA.Classes
                 sqlconn.Open();
                 sqlcmd.Connection = sqlconn;
                 sqlcmd.CommandType = CommandType.Text;
-                sqlcmd.CommandText = "update Dashboard set Description='" + nama + "', Family='" + fam + "', BU='" + bu + "', BU_Line='" + line + "', Status='" + status + "', Owner_Engineer='" + oe + "', RF_ID='" + rfid + "', CO='" + co + "', EAM='" + eam + "', Job_No='"+jn+ "', Asset_Group_ID='" + agid + "', Asset_Group_Desc='" + agd + "', Manufacturer='" + manu + "', Asset_Owner='" + ao + "', PM='" + pm + "', PM_Period='" + pmp + "', Calibration='" + cal + "', Cal_Period='" + cp + "', Cal_ID='" + cid + "', Cal_Supplier='" + cs + "', Equip_Picture='" + ep + "',Manual_Doc_Attachment='" + mda + "' ,By_Whom='" + bw + "' ,Last_Update='" + lu + "' ,Remark='" + re + "' where SN='" + id + "'";
+                sqlcmd.CommandText = "update Dashboard set Description='" + nama + "', Family='" + fam + "', BU='" + bu + "', BU_Line='" + line + "', Status='" + status + "', Owner_Engineer='" + oe + "', RF_ID='" + rfid + "', CO='" + co + "', EAM='" + eam + "', Job_No='"+jn+ "', Asset_Group_ID='" + agid + "', Asset_Group_Desc='" + agd + "', Manufacturer='" + manu + "', Asset_Owner='" + ao + "', PM='" + pm + "', PM_Period='" + pmp + "', Calibration='" + cal + "', Cal_Period='" + cp + "', Cal_ID='" + cid + "', Cal_Supplier='" + cs + "', Equip_Picture='" + ep + "',Manual_Doc_Attachment='" + mdca + "' ,By_Whom='" + bw + "' ,Last_Update='" + lsu + "' ,Remark='" + r + "' where SN='" + id + "'";
                 sqlcmd.ExecuteNonQuery();
                 sqlconn.Close();
             }
