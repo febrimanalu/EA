@@ -138,10 +138,10 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
                         cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtEditMDCA.Text.Trim());
-                        cmd.Parameters.AddWithValue("@By_Whom", txtEditBWH.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtEditMDA.Text.Trim());
+                        cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", dateTimeVariable);
-                        cmd.Parameters.AddWithValue("@Remark", txtEditRE.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -179,10 +179,10 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_Period", txtEditCP.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtEditMDCA.Text.Trim());
-                        cmd.Parameters.AddWithValue("@By_Whom", txtEditBWH.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtEditMDA.Text.Trim());
+                        cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", dateTimeVariable);
-                        cmd.Parameters.AddWithValue("@Remark", txtEditRE.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
