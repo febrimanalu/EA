@@ -54,7 +54,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@BU", ddlBU.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@BU_Line", txtBUL.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlS.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Owner_Engineer", txtOE.Text.Trim()); ;
+                        cmd.Parameters.AddWithValue("@Owner_Engineer", txtOE.Text.Trim());
                         cmd.Parameters.AddWithValue("@RF_ID", txtRFID.Text.Trim());
                         cmd.Parameters.AddWithValue("@CO", txtCO.Text.Trim());
                         cmd.Parameters.AddWithValue("@EAM", txtEAM.Text.Trim());
