@@ -63,9 +63,9 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Asset_Group_Desc", txtAGD.Text.Trim());
                         cmd.Parameters.AddWithValue("@Manufacturer", ddlManu.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Owner", ddlAO.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@PM", ddlPM.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PM", ddlPM.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@PM_Period", txtPMP.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Calibration", ddlCal.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Calibration", ddlCal.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Period", txtCP.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
@@ -89,7 +89,7 @@ namespace EA
         {
             txtSN.Text = string.Empty;
             txtDesc.Text = string.Empty;
-            ddlFam.Text = string.Empty;
+            ddlFam.SelectedValue = "--Select Status--";
             ddlBU.SelectedValue = "--Select Status--";
             txtBUL.Text = string.Empty;
             ddlS.SelectedValue = "--Select Status--";
@@ -97,7 +97,20 @@ namespace EA
             txtRFID.Text = string.Empty;
             txtCO.Text = string.Empty;
             txtEAM.Text = string.Empty;
+            txtJN.Text = string.Empty;
+            ddlAGID.SelectedValue = "--Select Status--";
             txtAGD.Text = string.Empty;
+            ddlManu.SelectedValue = "--Select Status--";
+            ddlAO.SelectedValue = "--Select Status--";
+            ddlPM.SelectedValue = "--Select Status--";
+            txtPMP.Text = string.Empty;
+            ddlCal.SelectedValue = "--Select Status--";
+            txtCP.Text = string.Empty;
+            txtCID.Text = string.Empty;
+            txtCS.Text = string.Empty;
+            txtMDA.Text = string.Empty;
+            txtBW.Text = string.Empty;
+            txtR.Text = string.Empty;
         }
 
         protected void btnEdit_Click(object sender, EventArgs e)
@@ -131,9 +144,9 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Asset_Group_Desc", txtEditAGD.Text.Trim());
                         cmd.Parameters.AddWithValue("@Manufacturer", ddlEditManu.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Owner", ddlEditAO.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@PM", ddlEditPM.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PM", ddlEditPM.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@PM_Period", txtEditPMP.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Calibration", ddlEditCal.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Calibration", ddlEditCal.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Period", txtEditCP.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
@@ -173,9 +186,9 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Asset_Group_Desc", txtEditAGD.Text.Trim());
                         cmd.Parameters.AddWithValue("@Manufacturer", ddlEditManu.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Owner", ddlEditAO.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@PM", ddlEditPM.Text.Trim());
+                        cmd.Parameters.AddWithValue("@PM", ddlEditPM.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@PM_Period", txtEditPMP.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Calibration", ddlEditCal.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Calibration", ddlEditCal.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Period", txtEditCP.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
