@@ -30,6 +30,23 @@ namespace EA
             RptDashboard.DataBind();
         }
 
+        private void Summary()
+        {
+            string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+            SqlConnection con = new
+            SqlConnection(Koneksi);
+            con.Open();
+
+            SqlCommand cmd = new
+            SqlCommand("spt_summary", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Status", Session["Status"].ToString());
+            SqlDataAdapter sda = new
+            SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+        }
+
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (txtEP.HasFile)
