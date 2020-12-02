@@ -24,6 +24,15 @@ namespace EA
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// RptSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RptSummary;
+
+        /// <summary>
         /// RptDashboard control.
         /// </summary>
         /// <remarks>

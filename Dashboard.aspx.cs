@@ -19,6 +19,9 @@ namespace EA
             if (!IsPostBack)
             {
                 DtDashboard();
+            } else
+            {
+                Summary();
             }
         }
 
