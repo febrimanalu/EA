@@ -99,9 +99,6 @@
                             <a class="nav-link text-dark" href="Dashboard.aspx"">Dashboard<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-dark" href="Email.aspx">Email<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item active">
                             <a class="nav-link text-dark" href="Login.aspx">Logout<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
@@ -109,27 +106,15 @@
             </nav>
         </header>
         <main role="row">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">
-                        STATUS
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
-                    <div class="boxDiv">
-                        LOCATION
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">
-                        ASSET
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
-                    <div class="boxDiv">
-                        TOTAL
-                    </div>
-                </div>
+            <div class="container">
+                <asp:Repeater ID="RptSummary" runat="server">
+                    <HeaderTemplate></HeaderTemplate>
+                    <ItemTemplate>
+                        <div>'<%# Eval("Status") %>'</div>
+                            <div>'<%# Eval("Total") %>'</div>
+                    </ItemTemplate>
+                    <FooterTemplate></FooterTemplate>
+                </asp:Repeater>
             </div>
             <div class="ml-1 mt-5 mr-1 mb-5">
                 <button class="btn btn-primary" type="button" data-target="#ModalCreate" data-toggle="modal">Create Data</button>

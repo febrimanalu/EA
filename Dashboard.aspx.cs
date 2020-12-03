@@ -19,8 +19,6 @@ namespace EA
             if (!IsPostBack)
             {
                 DtDashboard();
-            } else
-            {
                 Summary();
             }
         }
@@ -43,11 +41,13 @@ namespace EA
             SqlCommand cmd = new
             SqlCommand("spt_summary", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Status", Session["Status"].ToString());
+            string StoredProcedure = @"spt_summary";
             SqlDataAdapter sda = new
             SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
+            RptSummary.DataSource = dt;
+            RptSummary.DataBind();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace EA
             if (txtEP.HasFile)
             {
                 string FileExtension = Path.GetExtension(txtEP.FileName).Substring(1);
-                string contentType = txtEP.PostedFile.ContentType;
+                string ContentType = txtEP.PostedFile.ContentType;
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
                 txtEP.SaveAs(Server.MapPath(ImgPath));
                 DateTime LastUpdate = DateTime.Now;
