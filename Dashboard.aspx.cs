@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,7 +14,7 @@ using EA.Classes;
 namespace EA
 {
     public partial class Dashboard : System.Web.UI.Page
-    {
+    { 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -34,20 +35,22 @@ namespace EA
         private void Summary()
         {
             string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
-            SqlConnection con = new
-            SqlConnection(Koneksi);
+            SqlConnection con = new SqlConnection(Koneksi);
             con.Open();
 
-            SqlCommand cmd = new
-            SqlCommand("spt_summary", con);
+            SqlCommand cmd = new SqlCommand("spt_summary", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            string StoredProcedure = @"spt_summary";
-            SqlDataAdapter sda = new
-            SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            RptSummary.DataSource = dt;
+            cmd.Parameters.AddWithValue("@Status","Status");
+            cmd.Parameters.AddWithValue("@Total", "Total");
+            cmd.Parameters.AddWithValue("@RowCategory", "RowCategory");
+            cmd.Parameters.AddWithValue("@RowType", "RowType");
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dta = new DataTable();
+            sda.Fill(dta);
+            RptSummary.DataSource = dta;
             RptSummary.DataBind();
+            con.Close();
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
