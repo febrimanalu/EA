@@ -38,13 +38,9 @@ namespace EA
             SqlConnection con = new SqlConnection(Koneksi);
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("spt_summary", con);
+            SqlCommand cmd = new SqlCommand("spt_status", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Status","Status");
-            cmd.Parameters.AddWithValue("@Total", "Total");
-            cmd.Parameters.AddWithValue("@RowCategory", "RowCategory");
-            cmd.Parameters.AddWithValue("@RowType", "RowType");
-            cmd.ExecuteNonQuery();
+            string query = @"spt_status";
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dta = new DataTable();
             sda.Fill(dta);
