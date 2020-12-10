@@ -38,9 +38,9 @@ namespace EA
             SqlConnection con = new SqlConnection(Koneksi);
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("spt_status", con);
+            SqlCommand cmd = new SqlCommand("spt_summary", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            string query = @"spt_status";
+            string query = @"spt_summary";
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dta = new DataTable();
             sda.Fill(dta);
@@ -79,7 +79,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@EAM", txtEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtJN.Text.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlAGID.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", txtAGD.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlAGDesc.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Manufacturer", ddlManu.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Owner", ddlAO.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@PM", ddlPM.SelectedValue.Trim());
@@ -118,7 +118,7 @@ namespace EA
             txtEAM.Text = string.Empty;
             txtJN.Text = string.Empty;
             ddlAGID.SelectedValue = "--Select Status--";
-            txtAGD.Text = string.Empty;
+            ddlAGDesc.SelectedValue = "--Select Status--";
             ddlManu.SelectedValue = "--Select Status--";
             ddlAO.SelectedValue = "--Select Status--";
             ddlPM.SelectedValue = "--Select Status--";

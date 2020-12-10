@@ -327,7 +327,12 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label13" runat="server" Text="Asset_Group_Desc"></asp:Label>
-                                                <asp:TextBox ID="txtAGD" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:DropDownList ID="ddlAGDesc" CssClass="form-control" runat="server">
+                                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                                    <asp:ListItem>FIXTURE</asp:ListItem>
+                                                    <asp:ListItem>EQUIPMENT</asp:ListItem>
+                                                    <asp:ListItem>TESTER</asp:ListItem>
+                                                </asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
