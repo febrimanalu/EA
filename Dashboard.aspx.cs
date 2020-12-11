@@ -38,14 +38,12 @@ namespace EA
             SqlConnection con = new SqlConnection(Koneksi);
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("spt_summary", con);
+            SqlCommand cmd = new SqlCommand("spt_status", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            string query = @"spt_summary";
+            string query = @"spt_status";
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dta = new DataTable();
             sda.Fill(dta);
-            RptSummary.DataSource = dta;
-            RptSummary.DataBind();
             con.Close();
         }
 
@@ -62,16 +60,16 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Dashboard (SN, Description, Family, BU, BU_Line, Status, Owner_Engineer, RF_ID, CO, EAM, Job_No, Asset_Group_ID, Asset_Group_Desc, Manufacturer, Asset_Owner, PM, PM_Period, Calibration, Cal_Period, Cal_ID, Cal_Supplier, Equip_Picture, Manual_Doc_Attachment, By_Whom, Last_Update, Remark )" + "VALUES" +
-                            "(@SN, @Description, @Family, @BU, @BU_Line, @Status, @Owner_Engineer, @RF_ID, @CO, @EAM, @Job_No, @Asset_Group_ID, @Asset_Group_Desc, @Manufacturer, @Asset_Owner, @PM, @PM_Period, @Calibration, @Cal_Period, @Cal_ID, @Cal_Supplier, @Equip_Picture, @Manual_Doc_Attachment, @By_Whom, @Last_Update, @Remark)"))
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Dashboard (SN, Description, Family, Location, Line, Status, Owner_Engineer, RF_ID, CO, EAM, Job_No, Asset_Group_ID, Asset_Group_Desc, Manufacturer, Asset_Owner, PM, PM_Period, Calibration, Cal_Period, Cal_ID, Cal_Supplier, Equip_Picture, Manual_Doc_Attachment, By_Whom, Last_Update, Remark )" + "VALUES" +
+                            "(@SN, @Description, @Family, @Location, @Line, @Status, @Owner_Engineer, @RF_ID, @CO, @EAM, @Job_No, @Asset_Group_ID, @Asset_Group_Desc, @Manufacturer, @Asset_Owner, @PM, @PM_Period, @Calibration, @Cal_Period, @Cal_ID, @Cal_Supplier, @Equip_Picture, @Manual_Doc_Attachment, @By_Whom, @Last_Update, @Remark)"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@SN", txtSN.Text.ToString());
                         cmd.Parameters.AddWithValue("@Description", txtDesc.Text.Trim());
                         cmd.Parameters.AddWithValue("@Family", ddlFam.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@BU", ddlBU.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@BU_Line", txtBUL.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Location", ddlLoc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Line", txtLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtOE.Text.Trim());
                         cmd.Parameters.AddWithValue("@RF_ID", txtRFID.Text.Trim());
@@ -109,8 +107,8 @@ namespace EA
             txtSN.Text = string.Empty;
             txtDesc.Text = string.Empty;
             ddlFam.SelectedValue = "--Select Status--";
-            ddlBU.SelectedValue = "--Select Status--";
-            txtBUL.Text = string.Empty;
+            ddlLoc.SelectedValue = "--Select Status--";
+            txtLi.Text = string.Empty;
             ddlS.SelectedValue = "--Select Status--";
             txtOE.Text = string.Empty;
             txtRFID.Text = string.Empty;
@@ -144,15 +142,15 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, BU=@BU, BU_Line=@BU_Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@SN", txtEditSN.Text.ToString());
                         cmd.Parameters.AddWithValue("@Description", txtEditDesc.Text.Trim());
                         cmd.Parameters.AddWithValue("@Family", ddlEditFam.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@BU", ddlEditBU.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@BU_Line", txtEditBUL.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Location", ddlEditLoc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
                         cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
@@ -160,7 +158,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlEditAGID.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", txtEditAGD.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlEditAGDesc.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Manufacturer", ddlEditManu.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Owner", ddlEditAO.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@PM", ddlEditPM.SelectedValue.Trim());
@@ -186,15 +184,15 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, BU=@BU, BU_Line=@BU_Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@SN", txtEditSN.Text.ToString());
                         cmd.Parameters.AddWithValue("@Description", txtEditDesc.Text.Trim());
                         cmd.Parameters.AddWithValue("@Family", ddlEditFam.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@BU", ddlEditBU.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@BU_Line", txtEditBUL.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Location", ddlEditLoc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
                         cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
@@ -202,7 +200,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlEditAGID.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", txtEditAGD.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlEditAGDesc.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Manufacturer", ddlEditManu.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Asset_Owner", ddlEditAO.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@PM", ddlEditPM.SelectedValue.Trim());

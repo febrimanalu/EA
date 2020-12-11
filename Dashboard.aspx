@@ -102,22 +102,33 @@
                             <a class="nav-link text-dark" href="Login.aspx">Logout<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
-                </div>
+                </div> 
             </nav>
         </header>
         <main role="row">
-            <div class="container">
-                <asp:Repeater ID="RptSummary" runat="server">
-                    <HeaderTemplate></HeaderTemplate>
-                    <ItemTemplate>
-                        <div>
-                            <%# Eval("Status") %>
-                            <%# Eval("Total") %>
-                        </div>
-
-                    </ItemTemplate>
-                    <%--<FooterTemplate></FooterTemplate>--%>
-                </asp:Repeater>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
+                    <div class="boxDiv">
+                        STATUS
+                    </div>
+                    <%# Eval("Status") %>
+                    <%# Eval("Total") %>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
+                    <div class="boxDiv">
+                        LOCATION
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
+                    <div class="boxDiv">
+                        ASSET
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
+                    <div class="boxDiv">
+                        TOTAL
+                    </div>
+                </div>
             </div>
             <div class="ml-1 mt-5 mr-1 mb-5">
                 <button class="btn btn-primary" type="button" data-target="#ModalCreate" data-toggle="modal">Create Data</button>
@@ -131,8 +142,8 @@
                                     <th>SN</th>
                                     <th>Description</th>
                                     <th>Family</th>
-                                    <th>BU</th>
-                                    <th>BU_Line</th>
+                                    <th>Location</th>
+                                    <th>Line</th>
                                     <th>Status</th>
                                     <th>Owner_Engineer</th>
                                     <th>RF_ID</th>
@@ -166,8 +177,8 @@
                                     </td>
                                     <td><%# Eval ("Description") %></td>
                                     <td><%# Eval ("Family") %></td>
-                                    <td><%# Eval ("BU") %></td>
-                                    <td><%# Eval ("BU_Line") %></td>
+                                    <td><%# Eval ("Location") %></td>
+                                    <td><%# Eval ("Line") %></td>
                                     <td><%# Eval ("Status") %></td>
                                     <td><%# Eval ("Owner_Engineer") %></td>
                                     <td><%# Eval ("RF_ID") %></td>
@@ -192,7 +203,7 @@
                                     <td>
                                          &nbsp
                                         <a id="Edit_data" data-toggle="modal" data-target="#ModalEdit" onclick="Edit_data" class="fas fa-edit" data-id="<%# Eval("SN") %>" data-nama="<%# Eval("Description") %>" data-fam="<%# Eval("Family") %>"
-                                        data-bu="<%# Eval("BU") %>" data-line="<%# Eval("BU_Line") %>" data-status="<%# Eval("Status") %>" data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("CO") %>"
+                                        data-loc="<%# Eval("Location") %>" data-li="<%# Eval("Line") %>" data-status="<%# Eval("Status") %>" data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("CO") %>"
                                         data-eam="<%# Eval("EAM") %>" data-jn="<%# Eval("Job_No") %>" data-agid="<%# Eval("Asset_Group_ID") %>" data-agd="<%# Eval("Asset_Group_Desc") %>" data-manu="<%# Eval("Manufacturer") %>" data-ao="<%# Eval("Asset_Owner") %>"
                                         data-pm="<%# Eval("PM") %>" data-pmp="<%# Eval("PM_Period") %>" data-cal="<%# Eval("Calibration") %>" data-cp="<%# Eval("Cal_Period") %>" data-cid="<%# Eval("Cal_ID") %>" data-cs="<%# Eval("Cal_Supplier") %>"
                                         data-ep="<%# Eval("Equip_picture") %>" data-mda="<%# Eval("Manual_Doc_Attachment") %>" data-bw="<%# Eval("By_Whom") %>" data-lu="<%# Eval("Last_Update") %>" data-re="<%# Eval("Remark") %>">
@@ -252,8 +263,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label4" runat="server" Text="BU"></asp:Label>
-                                                <asp:DropDownList ID="ddlBU" CssClass="form-control" runat="server">
+                                                <asp:Label ID="Label4" runat="server" Text="Location"></asp:Label>
+                                                <asp:DropDownList ID="ddlLoc" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>BU 1</asp:ListItem>
                                                     <asp:ListItem>BU 2</asp:ListItem>
@@ -265,8 +276,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label5" runat="server" Text="BU_Line"></asp:Label>
-                                                <asp:TextBox ID="txtBUL" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:Label ID="Label5" runat="server" Text="Line"></asp:Label>
+                                                <asp:TextBox ID="txtLi" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -476,8 +487,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label29" runat="server" Text="BU"></asp:Label>
-                                                <asp:DropDownList ID="ddlEditBU" CssClass="form-control" runat="server">
+                                                <asp:Label ID="Label29" runat="server" Text="Location"></asp:Label>
+                                                <asp:DropDownList ID="ddlEditLoc" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
                                                     <asp:ListItem>BU 1</asp:ListItem>
                                                     <asp:ListItem>BU 2</asp:ListItem>
@@ -489,8 +500,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label30" runat="server" Text="BU_Line"></asp:Label>
-                                                <asp:TextBox ID="txtEditBUL" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:Label ID="Label30" runat="server" Text="Line"></asp:Label>
+                                                <asp:TextBox ID="txtEditLi" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -551,7 +562,12 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label38" runat="server" Text="Asset_Group_Desc"></asp:Label>
-                                                <asp:TextBox ID="txtEditAGD" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:DropDownList ID="ddlEditAGDesc" CssClass="form-control" runat="server">
+                                                    <asp:ListItem>--Select Status--</asp:ListItem>
+                                                    <asp:ListItem>FIXTURE</asp:ListItem>
+                                                    <asp:ListItem>EQUIPMENT</asp:ListItem>
+                                                    <asp:ListItem>TESTER</asp:ListItem>
+                                                </asp:DropDownList>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -703,8 +719,8 @@
             var _id = $(this).data("id");
             var _nama = $(this).data("nama");
             var _fam = $(this).data("fam");
-            var _bu = $(this).data("bu");
-            var _line = $(this).data("line");
+            var _loc = $(this).data("loc");
+            var _li = $(this).data("li");
             var _status = $(this).data("status");
             var _oe = $(this).data("oe");
             var _rfid = $(this).data("rfid");
@@ -730,8 +746,8 @@
             $("#ModalEdit #txtEditSN").val(_id);
             $("#ModalEdit #txtEditDesc").val(_nama);
             $("#ModalEdit #ddlEditFam").val(_fam);
-            $("#ModalEdit #ddlEditBU").val(_bu);
-            $("#ModalEdit #txtEditBUL").val(_line);
+            $("#ModalEdit #ddlEditLoc").val(_loc);
+            $("#ModalEdit #txtEditLi").val(_li);
             $("#ModalEdit #ddlEditS").val(_status);
             $("#ModalEdit #txtEditOE").val(_oe);
             $("#ModalEdit #txtEditRFID").val(_rfid);
@@ -739,7 +755,7 @@
             $("#ModalEdit #txtEditEAM").val(_eam);
             $("#ModalEdit #txtEditJN").val(_jn);
             $("#ModalEdit #ddlEditAGID").val(_agid);
-            $("#ModalEdit #txtEditAGD").val(_agd);
+            $("#ModalEdit #ddlEditAGDesc").val(_agd);
             $("#ModalEdit #ddlEditManu").val(_manu);
             $("#ModalEdit #ddlEditAO").val(_ao);
             $("#ModalEdit #ddlEditPM").val(_pm);
