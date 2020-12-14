@@ -99,20 +99,19 @@
                             <a class="nav-link text-dark" href="Dashboard.aspx"">Dashboard<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-dark" href="Login.aspx">Logout<span class="sr-only">(current)</span></a>
+                            <asp:Button ID="btnlogout" CssClass="nav-link text-dark" Text="Logout" OnClick="btnlogout_Click" runat="server" />
                         </li>
-                    </ul>
+                    </ul> 
                 </div> 
             </nav>
         </header>
         <main role="row">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">
-                        STATUS
+                    <div class="boxDiv">STATUS 
+                        <asp:SqlDataSource ID="sqs1" runat="server"></asp:SqlDataSource>
+                        <asp:Label ID="idStatus" runat="server"><%# Eval("Status") %> <%# Eval("Total") %></asp:Label>
                     </div>
-                    <%# Eval("Status") %>
-                    <%# Eval("Total") %>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
                     <div class="boxDiv">
