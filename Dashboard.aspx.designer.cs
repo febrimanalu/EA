@@ -33,22 +33,31 @@ namespace EA
         protected global::System.Web.UI.WebControls.Button btnlogout;
 
         /// <summary>
-        /// sqs1 control.
+        /// Rpt1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqs1;
+        protected global::System.Web.UI.WebControls.Repeater Rpt1;
 
         /// <summary>
-        /// idStatus control.
+        /// Rpt2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idStatus;
+        protected global::System.Web.UI.WebControls.Repeater Rpt2;
+
+        /// <summary>
+        /// Rpt4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Rpt4;
 
         /// <summary>
         /// RptDashboard control.

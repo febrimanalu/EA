@@ -20,7 +20,9 @@ namespace EA
             if (!IsPostBack)
             {
                 DtDashboard();
-                Summary();
+                Status();
+                Location();
+                Owner();
             }
         }
 
@@ -32,7 +34,7 @@ namespace EA
             RptDashboard.DataBind();
         }
 
-        private void Summary()
+        private void Status()
         {
             string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
             SqlConnection con = new SqlConnection(Koneksi);
@@ -44,6 +46,42 @@ namespace EA
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dta = new DataTable();
             sda.Fill(dta);
+            Rpt1.DataSource = dta;
+            Rpt1.DataBind();
+            con.Close();
+        }
+
+        private void Location()
+        {
+            string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+            SqlConnection con = new SqlConnection(Koneksi);
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("spt_location", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            string query = @"spt_location";
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable ta = new DataTable();
+            sda.Fill(ta);
+            Rpt2.DataSource = ta;
+            Rpt2.DataBind();
+            con.Close();
+        }
+
+        private void Owner()
+        {
+            string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+            SqlConnection con = new SqlConnection(Koneksi);
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("spt_aowner", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            string query = @"spt_aowner";
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+            Rpt4.DataSource = data;
+            Rpt4.DataBind();
             con.Close();
         }
 

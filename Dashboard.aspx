@@ -91,12 +91,12 @@
 <body class="bd">
     <form id="form1" runat="server">
         <header>
-            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-light">
-                <a class="navbar-brand"><img src="img/flex.png" width="60" height="30" /></a>
+            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary">
+                <a class="navbar-brand"></a>
                 <div class="collapse navbar-collapse" id="Mynavbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link text-dark" href="Dashboard.aspx"">Dashboard<span class="sr-only">(current)</span></a>
+                            <a class="nav-link text-light" href="Dashboard.aspx"">Dashboard<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <asp:Button ID="btnlogout" CssClass="nav-link text-dark" Text="Logout" OnClick="btnlogout_Click" runat="server" />
@@ -109,13 +109,24 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">STATUS 
-                        <asp:SqlDataSource ID="sqs1" runat="server"></asp:SqlDataSource>
-                        <asp:Label ID="idStatus" runat="server"><%# Eval("Status") %> <%# Eval("Total") %></asp:Label>
+                        <asp:Repeater ID="Rpt1" runat="server">
+                            <HeaderTemplate></HeaderTemplate>
+                            <ItemTemplate>
+                                <div class="active"> <%# Eval("Status") +" | "+ Eval("Total") %></div>
+                            </ItemTemplate>
+                            <FooterTemplate></FooterTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
-                    <div class="boxDiv">
-                        LOCATION
+                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
+                    <div class="boxDiv">LOCATION 
+                        <asp:Repeater ID="Rpt2" runat="server">
+                            <HeaderTemplate></HeaderTemplate>
+                            <ItemTemplate>
+                                <div class="bu"><%# Eval("Location") +" | "+ Eval("Total") %></div>
+                            </ItemTemplate>
+                            <FooterTemplate></FooterTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
@@ -123,9 +134,15 @@
                         ASSET
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
-                    <div class="boxDiv">
-                        TOTAL
+                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
+                    <div class="boxDiv">OWNER 
+                        <asp:Repeater ID="Rpt4" runat="server">
+                            <HeaderTemplate></HeaderTemplate>
+                            <ItemTemplate>
+                                <div class="bu"><%# Eval("Asset_Owner") +" | "+ Eval("Total") %></div>
+                            </ItemTemplate>
+                            <FooterTemplate></FooterTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
             </div>
@@ -265,9 +282,9 @@
                                                 <asp:Label ID="Label4" runat="server" Text="Location"></asp:Label>
                                                 <asp:DropDownList ID="ddlLoc" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
-                                                    <asp:ListItem>BU 1</asp:ListItem>
-                                                    <asp:ListItem>BU 2</asp:ListItem>
-                                                    <asp:ListItem>BU 3</asp:ListItem>
+                                                    <asp:ListItem>BU1</asp:ListItem>
+                                                    <asp:ListItem>BU2</asp:ListItem>
+                                                    <asp:ListItem>BU3</asp:ListItem>
                                                     <asp:ListItem>WAREHOUSE</asp:ListItem>
                                                     <asp:ListItem>CUSTOMER SITE</asp:ListItem>
                                                 </asp:DropDownList>
@@ -489,9 +506,9 @@
                                                 <asp:Label ID="Label29" runat="server" Text="Location"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditLoc" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
-                                                    <asp:ListItem>BU 1</asp:ListItem>
-                                                    <asp:ListItem>BU 2</asp:ListItem>
-                                                    <asp:ListItem>BU 3</asp:ListItem>
+                                                    <asp:ListItem>BU1</asp:ListItem>
+                                                    <asp:ListItem>BU2</asp:ListItem>
+                                                    <asp:ListItem>BU3</asp:ListItem>
                                                     <asp:ListItem>WAREHOUSE</asp:ListItem>
                                                     <asp:ListItem>CUSTOMER SITE</asp:ListItem>
                                                 </asp:DropDownList>
