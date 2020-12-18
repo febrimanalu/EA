@@ -130,8 +130,17 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">
-                        ASSET
+                    <div class="boxDiv">ASET 
+                        <asp:Repeater ID="Rpt3" runat="server">
+                            <HeaderTemplate></HeaderTemplate>
+                            <ItemTemplate>
+                                <div class="co">
+                                    <%# Eval("CO") +" | "+ Eval("TotalCO") %>
+                                    <%# Eval("EAM") +" | "+ Eval("TotalEAM") %>
+                                </div>
+                            </ItemTemplate>
+                            <FooterTemplate></FooterTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
@@ -139,7 +148,7 @@
                         <asp:Repeater ID="Rpt4" runat="server">
                             <HeaderTemplate></HeaderTemplate>
                             <ItemTemplate>
-                                <div class="bu"><%# Eval("Asset_Owner") +" | "+ Eval("Total") %></div>
+                                <div class="ao"><%# Eval("Asset_Owner") +" | "+ Eval("Total") %></div>
                             </ItemTemplate>
                             <FooterTemplate></FooterTemplate>
                         </asp:Repeater>

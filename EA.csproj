@@ -1816,6 +1816,7 @@
     <Content Include="img\delete.png" />
     <Content Include="img\edit.png" />
     <Content Include="img\flex.png" />
+    <Content Include="img\flex1.png" />
     <Content Include="Login.aspx" />
     <Content Include="User.aspx" />
     <Content Include="Web.config" />
