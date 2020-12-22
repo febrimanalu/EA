@@ -86,6 +86,26 @@
                 width:100%;
             }
         }
+
+        .widget-two-teal{
+            background:yellow;
+        }
+
+        .widget-two-warning{
+            background:red;
+        }
+
+        .widget-two-primary{
+            background:skyblue;
+        }
+
+        .widget-two-success{
+            background:lightgreen;
+        }
+
+        .widget-two-secondary{
+            background:gray;
+        }
     </style>
 </head>
 <body class="bd">
@@ -109,49 +129,47 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">STATUS 
-                        <asp:Repeater ID="Rpt1" runat="server">
-                            <HeaderTemplate></HeaderTemplate>
-                            <ItemTemplate>
-                                <div class="active"> <%# Eval("Status") +" | "+ Eval("Total") %></div>
-                            </ItemTemplate>
-                            <FooterTemplate></FooterTemplate>
-                        </asp:Repeater>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt1" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <div class="<%# Eval("RowType") %>"> <%# Eval("Total") +" "+ Eval("Status") %></div>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
-                </div>
+                </div> 
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">LOCATION 
-                        <asp:Repeater ID="Rpt2" runat="server">
-                            <HeaderTemplate></HeaderTemplate>
-                            <ItemTemplate>
-                                <div class="bu"><%# Eval("Location") +" | "+ Eval("Total") %></div>
-                            </ItemTemplate>
-                            <FooterTemplate></FooterTemplate>
-                        </asp:Repeater>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt2" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <div class="<%# Eval("RowType") %>"> <%# Eval("Total") +" "+ Eval("Location") %></div>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">ASET 
-                        <asp:Repeater ID="Rpt3" runat="server">
-                            <HeaderTemplate></HeaderTemplate>
-                            <ItemTemplate>
-                                <div class="co">
-                                    <%# Eval("CO") +" | "+ Eval("TotalCO") %>
-                                    <%# Eval("EAM") +" | "+ Eval("TotalEAM") %>
-                                </div>
-                            </ItemTemplate>
-                            <FooterTemplate></FooterTemplate>
-                        </asp:Repeater>
-                    </div>
+                    <div class="boxDiv">ASET                         <br /><br /><br />                        <div class="row">                            <asp:Repeater ID="Rpt3" runat="server">                                <HeaderTemplate></HeaderTemplate>                                <ItemTemplate>                                    <div class="aset"><%# Eval("CO") +" | "+ Eval("TotalCO") %> <%# Eval("EAM") +" | "+ Eval("TotalEAM") %></div>                                </ItemTemplate>                                <FooterTemplate></FooterTemplate>                            </asp:Repeater>                        </div>                    </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">OWNER 
-                        <asp:Repeater ID="Rpt4" runat="server">
-                            <HeaderTemplate></HeaderTemplate>
-                            <ItemTemplate>
-                                <div class="ao"><%# Eval("Asset_Owner") +" | "+ Eval("Total") %></div>
-                            </ItemTemplate>
-                            <FooterTemplate></FooterTemplate>
-                        </asp:Repeater>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt4" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <div class="<%# Eval("RowType") %>"> <%# Eval("Total") +" "+ Eval("Asset_Owner") %></div>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
             </div>

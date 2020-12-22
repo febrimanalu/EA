@@ -52,23 +52,6 @@ namespace EA
             con.Close();
         }
 
-        private void Asset()
-        {
-            string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
-            SqlConnection con = new SqlConnection(Koneksi);
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("spt_asset", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            string query = @"spt_asset";
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable datat = new DataTable();
-            sda.Fill(datat);
-            Rpt3.DataSource = datat;
-            Rpt3.DataBind();
-            con.Close();
-        }
-
         private void Location()
         {
             string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
@@ -83,6 +66,23 @@ namespace EA
             sda.Fill(ta);
             Rpt2.DataSource = ta;
             Rpt2.DataBind();
+            con.Close();
+        }
+
+        private void Asset()
+        {
+            string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+            SqlConnection con = new SqlConnection(Koneksi);
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("spt_asset", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            string query = @"spt_asset";
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable datat = new DataTable();
+            sda.Fill(datat);
+            Rpt3.DataSource = datat;
+            Rpt3.DataBind();
             con.Close();
         }
 

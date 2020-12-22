@@ -107,7 +107,7 @@
                 <div class="collapse navbar-collapse" id="Mynavbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link text-dark" href="Login.aspx">Login<span class="sr-only">(current)</span></a>
+                            <asp:Button ID="btnLogin" CssClass="nav-link text-dark" Text="Login" OnClick="btnLogin_Click" runat="server" />
                         </li>
                     </ul>
                 </div>
@@ -181,8 +181,8 @@
                                     </td>
                                     <td><%# Eval ("Description") %></td>
                                     <td><%# Eval ("Family") %></td>
-                                    <td><%# Eval ("BU") %></td>
-                                    <td><%# Eval ("BU_Line") %></td>
+                                    <td><%# Eval ("Location") %></td>
+                                    <td><%# Eval ("Line") %></td>
                                     <td><%# Eval ("Status") %></td>
                                     <td><%# Eval ("Owner_Engineer") %></td>
                                     <td><%# Eval ("RF_ID") %></td>
