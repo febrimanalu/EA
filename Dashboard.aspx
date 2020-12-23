@@ -112,10 +112,12 @@
     <form id="form1" runat="server">
         <header>
             <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary">
-                <a class="navbar-brand"></a>
+                <a class="navbar-brand">
+                    <img src="img/flex1.png" height="60" />
+                </a>
                 <div class="collapse navbar-collapse" id="Mynavbar">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item active">        
                             <a class="nav-link text-light" href="Dashboard.aspx"">Dashboard<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
@@ -156,7 +158,18 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">ASET                         <br /><br /><br />                        <div class="row">                            <asp:Repeater ID="Rpt3" runat="server">                                <HeaderTemplate></HeaderTemplate>                                <ItemTemplate>                                    <div class="aset"><%# Eval("CO") +" | "+ Eval("TotalCO") %> <%# Eval("EAM") +" | "+ Eval("TotalEAM") %></div>                                </ItemTemplate>                                <FooterTemplate></FooterTemplate>                            </asp:Repeater>                        </div>                    </div>
+                    <div class="boxDiv">ASET 
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt3" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <div class="<%# Eval("RowType") %>"><%# Eval("Asset") +" | "+ Eval("Total") %></div>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">OWNER 
