@@ -16,19 +16,3 @@
     background-color: rgb(0,60,103);
 }
 
-.bd {
-    background-color: aliceblue;
-    background-repeat: no-repeat;
-    background-size: auto;
-    height: 100vh;
-}
-
-.boxDiv {
-    min-height: 150px;
-    padding-top: 20px;
-    padding-left: 20px;
-    background-color: white;
-    font-weight: bold;
-    color: black;
-    margin: 15px;
-}

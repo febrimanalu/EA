@@ -489,7 +489,7 @@ namespace EA
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMDA;
+        protected global::System.Web.UI.WebControls.FileUpload txtMDA;
 
         /// <summary>
         /// Label24 control.
@@ -948,7 +948,7 @@ namespace EA
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditMDA;
+        protected global::System.Web.UI.WebControls.FileUpload txtEditMDA;
 
         /// <summary>
         /// Label49 control.

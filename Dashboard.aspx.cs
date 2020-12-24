@@ -143,7 +143,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
                         cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtMDA.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FileExtension);
                         cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
                         cmd.Parameters.AddWithValue("@Remark", txtR.Text.Trim());
@@ -181,7 +181,6 @@ namespace EA
             txtCP.Text = string.Empty;
             txtCID.Text = string.Empty;
             txtCS.Text = string.Empty;
-            txtMDA.Text = string.Empty;
             txtBW.Text = string.Empty;
             txtR.Text = string.Empty;
         }
@@ -224,7 +223,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
                         cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtEditMDA.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FileExtension);
                         cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", dateTimeVariable);
                         cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
@@ -265,7 +264,6 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_Period", txtEditCP.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", txtEditMDA.Text.Trim());
                         cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", dateTimeVariable);
                         cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
