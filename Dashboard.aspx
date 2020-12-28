@@ -510,13 +510,17 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label22" runat="server" Text="Equip_Picture"></asp:Label>
-                                                <asp:FileUpload ID="txtEP" runat="server" />
+                                                <asp:FileUpload ID="fpEP" runat="server" />
+                                                <asp:Button ID="btnEP" runat="server" Text="Upload" OnClick="btnEP_Click" />
+                                                <asp:Panel ID="pEP" runat="server"></asp:Panel>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label23" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
-                                                <asp:FileUpload ID="txtMDA" runat="server" />
+                                                <asp:FileUpload ID="fpMDA" runat="server" />
+                                                <asp:Button ID="btnMDA" runat="server" Text="Upload" OnClick="btnMDA_Click" />
+                                                <asp:Panel ID="pMDA" runat="server"></asp:Panel>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -734,13 +738,17 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label47" runat="server" Text="Equip_Picture"></asp:Label>
-                                                <asp:FileUpload ID="txtEditEP" runat="server" />
+                                                <asp:FileUpload ID="fpEditEP" runat="server" />
+                                                <asp:Button ID="btnEditEP" runat="server" Text="Upload" OnClick="btnEditEP_Click" />
+                                                <asp:Panel ID="pEditEP" runat="server"></asp:Panel>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label48" runat="server" Text="Manual_Doc_Attachment"></asp:Label>
-                                                <asp:FileUpload ID="txtEditMDA" runat="server" />
+                                                <asp:FileUpload ID="fpEditMDA" runat="server" />
+                                                <asp:Button ID="btnEditMDA" runat="server" Text="Upload" OnClick="btnEditMDA_Click" />
+                                                <asp:Panel ID="pEditMDA" runat="server"></asp:Panel>
                                             </div>
                                         </div>
                                         <div class="col-md-4">

@@ -25,6 +25,14 @@ namespace EA
                 Asset();
                 Owner();
             }
+
+            if (Session["filelist"] != null)
+            {
+                ShowHperLink();
+            } else
+            {
+                Session["filelist"] = new List<string>();
+            }
         }
 
         private void DtDashboard()
@@ -103,14 +111,29 @@ namespace EA
             con.Close();
         }
 
+        private void ShowHperLink()
+        {
+            pMDA.Controls.Clear();
+            foreach (var item in (List<string>)Session["filelist"])
+            {
+                HyperLink h1 = new HyperLink();
+                h1.Text = item;
+                h1.NavigateUrl = @"http://localhost:44365/File/" + item;
+                pMDA.Controls.Add(h1);
+            }
+        }
+
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtEP.HasFile)
+            if (fpEP.HasFile)
             {
-                string FileExtension = Path.GetExtension(txtEP.FileName).Substring(1);
-                string ContentType = txtEP.PostedFile.ContentType;
+                string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
+                string ContentType = fpEP.PostedFile.ContentType;
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-                txtEP.SaveAs(Server.MapPath(ImgPath));
+                string Filemda = Path.GetExtension(fpMDA.FileName).Substring(1);
+                string Type = fpMDA.PostedFile.ContentType;
+                
+                fpEP.SaveAs(Server.MapPath(ImgPath));
                 DateTime LastUpdate = DateTime.Now;
 
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
@@ -187,11 +210,11 @@ namespace EA
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtEditEP.HasFile)
+            if (fpEditEP.HasFile)
             {
-                string FileExtension = Path.GetExtension(txtEditEP.FileName).Substring(1);
+                string FileExtension = Path.GetExtension(fpEditEP.FileName).Substring(1);
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-                txtEditEP.SaveAs(Server.MapPath(ImgPath));
+                fpEditEP.SaveAs(Server.MapPath(ImgPath));
                 DateTime dateTimeVariable = DateTime.Now;
 
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
@@ -290,6 +313,40 @@ namespace EA
         {
             Session.RemoveAll();
             Response.Redirect("~/Login.aspx");
+        }
+
+        protected void btnEP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnMDA_Click(object sender, EventArgs e)
+        {
+            if (fpMDA.HasFile)
+            {
+                try
+                {
+                    string filename = Path.GetFileName(fpMDA.FileName);
+                    List<string> filepath = (List<string>)Session["filelist"];
+                    filepath.Add(filename);
+                    fpMDA.SaveAs(Server.MapPath("File/") + filename);
+                    Session["filelist"] = filepath;
+                    ShowHperLink();
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
+
+        protected void btnEditMDA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditEP_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

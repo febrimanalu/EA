@@ -465,13 +465,31 @@ namespace EA
         protected global::System.Web.UI.WebControls.Label Label22;
 
         /// <summary>
-        /// txtEP control.
+        /// fpEP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtEP;
+        protected global::System.Web.UI.WebControls.FileUpload fpEP;
+
+        /// <summary>
+        /// btnEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEP;
+
+        /// <summary>
+        /// pEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pEP;
 
         /// <summary>
         /// Label23 control.
@@ -483,13 +501,31 @@ namespace EA
         protected global::System.Web.UI.WebControls.Label Label23;
 
         /// <summary>
-        /// txtMDA control.
+        /// fpMDA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtMDA;
+        protected global::System.Web.UI.WebControls.FileUpload fpMDA;
+
+        /// <summary>
+        /// btnMDA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMDA;
+
+        /// <summary>
+        /// pMDA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pMDA;
 
         /// <summary>
         /// Label24 control.
@@ -924,13 +960,31 @@ namespace EA
         protected global::System.Web.UI.WebControls.Label Label47;
 
         /// <summary>
-        /// txtEditEP control.
+        /// fpEditEP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtEditEP;
+        protected global::System.Web.UI.WebControls.FileUpload fpEditEP;
+
+        /// <summary>
+        /// btnEditEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditEP;
+
+        /// <summary>
+        /// pEditEP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pEditEP;
 
         /// <summary>
         /// Label48 control.
@@ -942,13 +996,31 @@ namespace EA
         protected global::System.Web.UI.WebControls.Label Label48;
 
         /// <summary>
-        /// txtEditMDA control.
+        /// fpEditMDA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtEditMDA;
+        protected global::System.Web.UI.WebControls.FileUpload fpEditMDA;
+
+        /// <summary>
+        /// btnEditMDA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditMDA;
+
+        /// <summary>
+        /// pEditMDA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pEditMDA;
 
         /// <summary>
         /// Label49 control.
