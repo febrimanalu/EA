@@ -25,14 +25,6 @@ namespace EA
                 Asset();
                 Owner();
             }
-
-            if (Session["filelist"] != null)
-            {
-                ShowHperLink();
-            } else
-            {
-                Session["filelist"] = new List<string>();
-            }
         }
 
         private void DtDashboard()
@@ -111,18 +103,6 @@ namespace EA
             con.Close();
         }
 
-        private void ShowHperLink()
-        {
-            pMDA.Controls.Clear();
-            foreach (var item in (List<string>)Session["filelist"])
-            {
-                HyperLink h1 = new HyperLink();
-                h1.Text = item;
-                h1.NavigateUrl = @"http://localhost:44365/File/" + item;
-                pMDA.Controls.Add(h1);
-            }
-        }
-
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (fpEP.HasFile)
@@ -130,10 +110,12 @@ namespace EA
                 string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
                 string ContentType = fpEP.PostedFile.ContentType;
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-                string Filemda = Path.GetExtension(fpMDA.FileName).Substring(1);
+                string Filename = Path.GetExtension(fpMDA.FileName).Substring(1);
                 string Type = fpMDA.PostedFile.ContentType;
-                
+                string FilePath = @"https://44365/File/" + Filename;
+
                 fpEP.SaveAs(Server.MapPath(ImgPath));
+                fpMDA.SaveAs(Server.MapPath(FilePath));
                 DateTime LastUpdate = DateTime.Now;
 
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
@@ -166,7 +148,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
                         cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FileExtension);
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", Filename);
                         cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
                         cmd.Parameters.AddWithValue("@Remark", txtR.Text.Trim());
@@ -313,40 +295,6 @@ namespace EA
         {
             Session.RemoveAll();
             Response.Redirect("~/Login.aspx");
-        }
-
-        protected void btnEP_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnMDA_Click(object sender, EventArgs e)
-        {
-            if (fpMDA.HasFile)
-            {
-                try
-                {
-                    string filename = Path.GetFileName(fpMDA.FileName);
-                    List<string> filepath = (List<string>)Session["filelist"];
-                    filepath.Add(filename);
-                    fpMDA.SaveAs(Server.MapPath("File/") + filename);
-                    Session["filelist"] = filepath;
-                    ShowHperLink();
-                }
-                catch (Exception ex)
-                {
-                }
-            }
-        }
-
-        protected void btnEditMDA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnEditEP_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
