@@ -105,57 +105,58 @@ namespace EA
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            if (fpEP.HasFile)
+            //Equiptment Picture
+            string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
+            string ContentType = fpEP.PostedFile.ContentType;
+            string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
+            fpEP.SaveAs(Server.MapPath(ImgPath));
+
+            //Manual Document Attachment
+            string Filename = Path.GetFileName(fpMDA.PostedFile.FileName);
+            fpMDA.PostedFile.SaveAs(Server.MapPath("File/") + Filename);
+            Response.Redirect(Request.Url.AbsoluteUri);
+            string[] FilePath = Directory.GetFiles(Server.MapPath("File/"));
+                
+            //Last Update
+            DateTime LastUpdate = DateTime.Now;
+            
+            string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(Koneksi))
             {
-                string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
-                string ContentType = fpEP.PostedFile.ContentType;
-                string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-                string Filename = Path.GetExtension(fpMDA.FileName).Substring(1);
-                string Type = fpMDA.PostedFile.ContentType;
-                string FilePath = @"https://44365/File/" + Filename;
-
-                fpEP.SaveAs(Server.MapPath(ImgPath));
-                fpMDA.SaveAs(Server.MapPath(FilePath));
-                DateTime LastUpdate = DateTime.Now;
-
-                string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
-                using (SqlConnection con = new SqlConnection(Koneksi))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO fix (SN, Description, Family, Location, Line, Status, Owner_Engineer, RF_ID, CO, EAM, Job_No, Asset_Group_ID, Asset_Group_Desc, Manufacturer, Asset_Owner, PM, PM_Period, Calibration, Cal_Period, Cal_ID, Cal_Supplier, Equip_Picture, Manual_Doc_Attachment, By_Whom, Last_Update, Remark )" + "VALUES" +
+                      "(@SN, @Description, @Family, @Location, @Line, @Status, @Owner_Engineer, @RF_ID, @CO, @EAM, @Job_No, @Asset_Group_ID, @Asset_Group_Desc, @Manufacturer, @Asset_Owner, @PM, @PM_Period, @Calibration, @Cal_Period, @Cal_ID, @Cal_Supplier, @Equip_Picture, @Manual_Doc_Attachment, @By_Whom, @Last_Update, @Remark)"))
                 {
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO fix (SN, Description, Family, Location, Line, Status, Owner_Engineer, RF_ID, CO, EAM, Job_No, Asset_Group_ID, Asset_Group_Desc, Manufacturer, Asset_Owner, PM, PM_Period, Calibration, Cal_Period, Cal_ID, Cal_Supplier, Equip_Picture, Manual_Doc_Attachment, By_Whom, Last_Update, Remark )" + "VALUES" +
-                            "(@SN, @Description, @Family, @Location, @Line, @Status, @Owner_Engineer, @RF_ID, @CO, @EAM, @Job_No, @Asset_Group_ID, @Asset_Group_Desc, @Manufacturer, @Asset_Owner, @PM, @PM_Period, @Calibration, @Cal_Period, @Cal_ID, @Cal_Supplier, @Equip_Picture, @Manual_Doc_Attachment, @By_Whom, @Last_Update, @Remark)"))
-                    {
-                        cmd.Connection = con;
-                        cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@SN", txtSN.Text.ToString());
-                        cmd.Parameters.AddWithValue("@Description", txtDesc.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Family", ddlFam.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Location", ddlLoc.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Line", txtLi.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Status", ddlS.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Owner_Engineer", txtOE.Text.Trim());
-                        cmd.Parameters.AddWithValue("@RF_ID", txtRFID.Text.Trim());
-                        cmd.Parameters.AddWithValue("@CO", txtCO.Text.Trim());
-                        cmd.Parameters.AddWithValue("@EAM", txtEAM.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Job_No", txtJN.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlAGID.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlAGDesc.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Manufacturer", ddlManu.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Asset_Owner", ddlAO.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@PM", ddlPM.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@PM_Period", txtPMP.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Calibration", ddlCal.SelectedValue.Trim());
-                        cmd.Parameters.AddWithValue("@Cal_Period", txtCP.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", Filename);
-                        cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
-                        cmd.Parameters.AddWithValue("@Remark", txtR.Text.Trim());
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                    }
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@SN", txtSN.Text.ToString());
+                    cmd.Parameters.AddWithValue("@Description", txtDesc.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Family", ddlFam.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Location", ddlLoc.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Line", txtLi.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Status", ddlS.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Owner_Engineer", txtOE.Text.Trim());
+                    cmd.Parameters.AddWithValue("@RF_ID", txtRFID.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CO", txtCO.Text.Trim());
+                    cmd.Parameters.AddWithValue("@EAM", txtEAM.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Job_No", txtJN.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlAGID.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlAGDesc.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Manufacturer", ddlManu.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Asset_Owner", ddlAO.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@PM", ddlPM.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@PM_Period", txtPMP.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Calibration", ddlCal.SelectedValue.Trim());
+                    cmd.Parameters.AddWithValue("@Cal_Period", txtCP.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());                    
+                    cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
+                    cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FilePath);
+                    cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
+                    cmd.Parameters.AddWithValue("@Remark", txtR.Text.Trim());
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                 }
             }
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
@@ -295,6 +296,15 @@ namespace EA
         {
             Session.RemoveAll();
             Response.Redirect("~/Login.aspx");
+        }
+
+        protected void myFile_Click(object sender, EventArgs e)
+        {
+            string filePath = (sender as LinkButton).CommandArgument;
+            Response.ContentType = ContentType;
+            Response.AppendHeader("Content-Disposition", "attachment; Filename=" + Path.GetFileName(filePath));
+            Response.WriteFile(filePath);
+            Response.End();
         }
     }
 }

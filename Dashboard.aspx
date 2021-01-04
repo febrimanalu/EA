@@ -290,8 +290,12 @@
                                     <td><%# Eval ("Cal_Period") %></td>
                                     <td><%# Eval ("Cal_ID") %></td>
                                     <td><%# Eval ("Cal_Supplier") %></td>
-                                    <td><img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" /></td>
-                                    <td><%# Eval ("Manual_Doc_Attachment") %></td>
+                                    <td>
+                                        <asp:Image ID="myImg" src='<%# Eval("Equip_picture")%>' runat="server" style="width:50px; height:auto" />
+                                    </td>
+                                    <td>
+                                        <asp:LinkButton ID="myFile" Text='<%# Eval("Manual_Doc_Attachment") %>' CommandArgument='<%# Eval("Manual_Doc_Attachment") %>' runat="server" OnClick="myFile_Click"></asp:LinkButton>
+                                    </td>
                                     <td><%# Eval ("By_Whom")  %></td>
                                     <td><%# Eval ("Last_Update") %></td>
                                     <td><%# Eval ("Remark") %></td>
