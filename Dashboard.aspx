@@ -291,10 +291,10 @@
                                     <td><%# Eval ("Cal_ID") %></td>
                                     <td><%# Eval ("Cal_Supplier") %></td>
                                     <td>
-                                        <asp:Image ID="myImg" src='<%# Eval("Equip_picture")%>' runat="server" style="width:50px; height:auto" />
+                                        <img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" />
                                     </td>
-                                    <td>
-                                        <asp:LinkButton ID="myFile" Text='<%# Eval("Manual_Doc_Attachment") %>' CommandArgument='<%# Eval("Manual_Doc_Attachment") %>' runat="server" OnClick="myFile_Click"></asp:LinkButton>
+                                    <td>-
+                                        <a href='<%# "Dashboard.aspx?ID" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
                                     </td>
                                     <td><%# Eval ("By_Whom")  %></td>
                                     <td><%# Eval ("Last_Update") %></td>

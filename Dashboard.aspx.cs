@@ -31,6 +31,8 @@ namespace EA
         {
             DataTable Dt = new DataTable();
             Dt = ClsDashboard.DtDashboard();
+
+            string mda = Request.Url.AbsoluteUri;
             RptDashboard.DataSource = Dt;
             RptDashboard.DataBind();
         }
@@ -105,21 +107,22 @@ namespace EA
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            //Equiptment Picture
+            //Equipment Picture
             string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
             string ContentType = fpEP.PostedFile.ContentType;
             string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
             fpEP.SaveAs(Server.MapPath(ImgPath));
 
-            //Manual Document Attachment
-            string Filename = Path.GetFileName(fpMDA.PostedFile.FileName);
-            fpMDA.PostedFile.SaveAs(Server.MapPath("File/") + Filename);
-            Response.Redirect(Request.Url.AbsoluteUri);
-            string[] FilePath = Directory.GetFiles(Server.MapPath("File/"));
-                
+            //Manual Doc Attachment
+            string[] validFileTypes = { "doc", "pdf", "txt", "xlsx", "xls", "zip" };
+            string Filename = System.IO.Path.GetExtension(fpMDA.PostedFile.FileName);
+            string FilePath = Server.MapPath("File/") + Path.GetFileName(fpMDA.PostedFile.FileName);
+            fpMDA.SaveAs(FilePath + Path.GetFileName(fpMDA.FileName));
+            
             //Last Update
             DateTime LastUpdate = DateTime.Now;
-            
+
+            //Koneksi SQL
             string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
             using (SqlConnection con = new SqlConnection(Koneksi))
             {
@@ -148,7 +151,7 @@ namespace EA
                     cmd.Parameters.AddWithValue("@Calibration", ddlCal.SelectedValue.Trim());
                     cmd.Parameters.AddWithValue("@Cal_Period", txtCP.Text.Trim());
                     cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());                    
+                    cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
                     cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
                     cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FilePath);
                     cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
@@ -195,11 +198,22 @@ namespace EA
         {
             if (fpEditEP.HasFile)
             {
+                //Equipment Picture
                 string FileExtension = Path.GetExtension(fpEditEP.FileName).Substring(1);
+                string ContentType = fpEditEP.PostedFile.ContentType;
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-                fpEditEP.SaveAs(Server.MapPath(ImgPath));
-                DateTime dateTimeVariable = DateTime.Now;
+                fpEP.SaveAs(Server.MapPath(ImgPath));
 
+                //Manual Doc Attachment
+                string[] validFileTypes = { "doc", "pdf", "txt", "xlsx", "xls", "zip" };
+                string Filename = System.IO.Path.GetExtension(fpEditMDA.PostedFile.FileName);
+                string FilePath = Server.MapPath("File/") + Path.GetFileName(fpEditMDA.PostedFile.FileName);
+                fpMDA.SaveAs(FilePath + Path.GetFileName(fpEditMDA.FileName));
+
+                //Last Update
+                DateTime LastUpdate = DateTime.Now;
+
+                //Koneksi SQL
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
@@ -231,7 +245,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
                         cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FileExtension);
                         cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Last_Update", dateTimeVariable);
+                        cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
                         cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -239,9 +253,9 @@ namespace EA
                     }
                 }
             }
-            else
+            else //yang tidak ada file upload yaitu EP dan MDA
             {
-                DateTime dateTimeVariable = DateTime.Now;
+                DateTime LastUpdate = DateTime.Now;
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
@@ -271,7 +285,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
                         cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Last_Update", dateTimeVariable);
+                        cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
                         cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
                         con.Open();
                         cmd.ExecuteNonQuery();
