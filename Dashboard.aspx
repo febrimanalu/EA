@@ -294,7 +294,7 @@
                                         <img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" />
                                     </td>
                                     <td>-
-                                        <a href='<%# "Dashboard.aspx?ID" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
+                                        <a href='<%# "http://localhost/EA/File/" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
                                     </td>
                                     <td><%# Eval ("By_Whom")  %></td>
                                     <td><%# Eval ("Last_Update") %></td>

@@ -1,0 +1,2 @@
+select status, count(status) as value from Dashboard group by Status
+
