@@ -227,8 +227,7 @@
             </div>
             <div class="ml-1 mt-5 mr-1 mb-5">
                 <button class="btn btn-primary" type="button" data-target="#ModalCreate" data-toggle="modal">Create Data</button>
-                <br />
-                <br />
+                <br /><br />
                 <asp:Repeater ID="RptDashboard" runat="server">
                     <HeaderTemplate>
                         <table id="myTable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
@@ -293,8 +292,8 @@
                                     <td>
                                         <img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" />
                                     </td>
-                                    <td>-
-                                        <a href='<%# "http://localhost/EA/File/" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
+                                    <td>
+                                        <a href='<%# "http://localhost/File/" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
                                     </td>
                                     <td><%# Eval ("By_Whom")  %></td>
                                     <td><%# Eval ("Last_Update") %></td>

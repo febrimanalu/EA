@@ -111,11 +111,10 @@ namespace EA
             string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
             string ContentType = fpEP.PostedFile.ContentType;
             string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-     
             fpEP.SaveAs(Server.MapPath(ImgPath));
 
             //Manual Doc Attachment
-            string[] validFileTypes = { "doc", "pdf", "txt", "xlsx", "xls", "zip" };
+            string[] validFileTypes = { "DOC", "PDF", "TXT", "XLSX", "XLS", "ZIP" };
             string Filename = System.IO.Path.GetExtension(fpMDA.PostedFile.FileName);
             string FilePath = Server.MapPath("File/") + Path.GetFileName(fpMDA.PostedFile.FileName);
             string x = Path.GetFileName(fpMDA.PostedFile.FileName);
@@ -204,13 +203,14 @@ namespace EA
                 string FileExtension = Path.GetExtension(fpEditEP.FileName).Substring(1);
                 string ContentType = fpEditEP.PostedFile.ContentType;
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-                fpEP.SaveAs(Server.MapPath(ImgPath));
+                fpEditEP.SaveAs(Server.MapPath(ImgPath));
 
                 //Manual Doc Attachment
-                string[] validFileTypes = { "doc", "pdf", "txt", "xlsx", "xls", "zip" };
+                string[] validFileTypes = { "DOC", "PDF", "TXT", "XLSX", "XLS", "ZIP" };
                 string Filename = System.IO.Path.GetExtension(fpEditMDA.PostedFile.FileName);
                 string FilePath = Server.MapPath("File/") + Path.GetFileName(fpEditMDA.PostedFile.FileName);
-                fpMDA.SaveAs(FilePath + Path.GetFileName(fpEditMDA.FileName));
+                string x = Path.GetFileName(fpEditMDA.PostedFile.FileName);
+                fpEditMDA.SaveAs(FilePath);
 
                 //Last Update
                 DateTime LastUpdate = DateTime.Now;
@@ -245,7 +245,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
                         cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
                         cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
-                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", FileExtension);
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", x);
                         cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
                         cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
                         cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
