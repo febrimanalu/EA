@@ -111,6 +111,7 @@ namespace EA
             string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
             string ContentType = fpEP.PostedFile.ContentType;
             string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
+            string y = Path.GetFileName(fpEP.PostedFile.FileName);
             fpEP.SaveAs(Server.MapPath(ImgPath));
 
             //Manual Doc Attachment
@@ -153,7 +154,7 @@ namespace EA
                     cmd.Parameters.AddWithValue("@Cal_Period", txtCP.Text.Trim());
                     cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
                     cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
+                    cmd.Parameters.AddWithValue("@Equip_Picture", y);
                     cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", x);
                     cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
                     cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
@@ -201,6 +202,107 @@ namespace EA
             {
                 //Equipment Picture
                 string FileExtension = Path.GetExtension(fpEditEP.FileName).Substring(1);
+                string ContentType = fpEditEP.PostedFile.ContentType;
+                string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
+                fpEditEP.SaveAs(Server.MapPath(ImgPath));
+
+                //Last Update
+                DateTime LastUpdate = DateTime.Now;
+
+                //Koneksi SQL
+                string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(Koneksi))
+                {
+                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@SN", txtEditSN.Text.ToString());
+                        cmd.Parameters.AddWithValue("@Description", txtEditDesc.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Family", ddlEditFam.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Location", ddlEditLoc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
+                        cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@CO", txtEditCO.Text.Trim());
+                        cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlEditAGID.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlEditAGDesc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Manufacturer", ddlEditManu.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Owner", ddlEditAO.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@PM", ddlEditPM.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@PM_Period", txtEditPMP.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Calibration", ddlEditCal.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Cal_Period", txtEditCP.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
+                        cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
+                        cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            else if (fpEditMDA.HasFile) 
+            {
+                //Manual Doc Attachment
+                string[] validFileTypes = { "DOC", "PDF", "TXT", "XLSX", "XLS", "ZIP" };
+                string Filename = System.IO.Path.GetExtension(fpEditMDA.PostedFile.FileName);
+                string FilePath = Server.MapPath("File/") + Path.GetFileName(fpEditMDA.PostedFile.FileName);
+                string x = Path.GetFileName(fpEditMDA.PostedFile.FileName);
+                fpEditMDA.SaveAs(FilePath);
+
+                //Last Update
+                DateTime LastUpdate = DateTime.Now;
+
+                //Koneksi SQL
+                string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(Koneksi))
+                {
+                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@SN", txtEditSN.Text.ToString());
+                        cmd.Parameters.AddWithValue("@Description", txtEditDesc.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Family", ddlEditFam.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Location", ddlEditLoc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
+                        cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@CO", txtEditCO.Text.Trim());
+                        cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_ID", ddlEditAGID.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Group_Desc", ddlEditAGDesc.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Manufacturer", ddlEditManu.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Asset_Owner", ddlEditAO.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@PM", ddlEditPM.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@PM_Period", txtEditPMP.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Calibration", ddlEditCal.SelectedValue.Trim());
+                        cmd.Parameters.AddWithValue("@Cal_Period", txtEditCP.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Cal_ID", txtEditCID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Cal_Supplier", txtEditCS.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", x);
+                        cmd.Parameters.AddWithValue("@By_Whom", txtEditBW.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);
+                        cmd.Parameters.AddWithValue("@Remark", txtEditR.Text.Trim());
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            else if (fpEditEP.HasFile && fpEditMDA.HasFile) // gabungan EP dan MDA
+            {
+                //Equipment Picture
+                string FileExtension = Path.GetExtension(fpEditEP.FileName).Substring(1); 
                 string ContentType = fpEditEP.PostedFile.ContentType;
                 string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
                 fpEditEP.SaveAs(Server.MapPath(ImgPath));
@@ -257,11 +359,12 @@ namespace EA
             }
             else //yang tidak ada file upload yaitu EP dan MDA
             {
+                //Last Update
                 DateTime LastUpdate = DateTime.Now;
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
@@ -312,15 +415,6 @@ namespace EA
         {
             Session.RemoveAll();
             Response.Redirect("~/Login.aspx");
-        }
-
-        protected void myFile_Click(object sender, EventArgs e)
-        {
-            string filePath = (sender as LinkButton).CommandArgument;
-            Response.ContentType = ContentType;
-            Response.AppendHeader("Content-Disposition", "attachment; Filename=" + Path.GetFileName(filePath));
-            Response.WriteFile(filePath);
-            Response.End();
         }
     }
 }

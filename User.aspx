@@ -50,17 +50,6 @@
             max-width:700px;
         }
 
-        #caption{
-            margin:auto;
-            display:block;
-            width:80%;
-            max-width:700px;
-            text-align:center;
-            color:#ccc;
-            padding:10px 0;
-            height:150px;
-        }
-
         .zoom-content, #caption{
             animation-name:zoom;
             animation-duration:0.6s;
@@ -97,48 +86,144 @@
                 width:100%;
             }
         }
+
+        .bd {
+            background-color: white;
+            background-repeat: no-repeat;
+            background-size: auto;
+            height: 100vh;
+        }
+
+        .boxDiv {
+            min-height: 150px;
+            padding-top: 20px;
+            padding-left: 20px;
+            background-color:beige;
+            font-weight: bold;
+            color: black;
+            margin: 15px;
+        }
+
+        .widget-two-teal{
+            background:yellow;
+            padding-left:4px;
+            padding-right:4px;
+        }
+
+        .widget-two-warning{
+            background:red;
+            padding-left:4px;
+            padding-right:4px;
+        }
+
+        .widget-two-primary{
+            background:skyblue;
+            padding-left:4px;
+            padding-right:4px;
+        }
+
+        .widget-two-success{
+            background:lightgreen;
+            padding-left:4px;
+            padding-right:4px;
+        }
+
+        .widget-two-secondary{
+            background:gray;
+            padding-left:4px;
+            padding-right:4px;
+        }
     </style>
 </head>
 <body class="bd">
     <form id="form1" runat="server">
         <header>
-            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-light">
-                <a class="navbar-brand"><img src="img/flex.png" width="60" height="30" /></a>
+            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary">
+                <a class="navbar-brand">
+                    <img src="img/flex1.png" height="40" />
+                </a>
                 <div class="collapse navbar-collapse" id="Mynavbar">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto text-light">
+                        <!-- Menampilkan Hari, Bulan dan Tahun -->                        <h3>                            <script type='text/javascript'>                                var months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];                                var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];                                var date = new Date();                                var day = date.getDate();                                var month = date.getMonth();                                var thisDay = date.getDay(),                                    thisDay = myDays[thisDay];                                var yy = date.getYear();                                var year = (yy < 1000) ? yy + 1900 : yy;                                document.write(months[month] + '/' + day + '/' + year);                            </script>                        </h3>&nbsp&nbsp                        <h6>                        <!-- Menampilkan Jam (Aktif) -->	                    <div id="clock"></div>		                    <script type="text/javascript">                                function showTime() {                                    var a_p = "";                                    var today = new Date();                                    var curr_hour = today.getHours();                                    var curr_minute = today.getMinutes();                                    var curr_second = today.getSeconds();                                    if (curr_hour < 12) {                                        a_p = "AM";                                    } else {                                        a_p = "PM";                                    }                                    if (curr_hour == 0) {                                        curr_hour = 12;                                    }                                    if (curr_hour > 12) {                                        curr_hour = curr_hour - 12;                                    }                                    curr_hour = checkTime(curr_hour);                                    curr_minute = checkTime(curr_minute);                                    curr_second = checkTime(curr_second);                                    document.getElementById('clock').innerHTML = curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;                                }                                function checkTime(i) {                                    if (i < 10) {                                        i = "0" + i;                                    }                                    return i;                                }                                setInterval(showTime, 500);                            </script>                        </h6>&nbsp&nbsp&nbsp&nbsp
                         <li class="nav-item active">
-                            <asp:Button ID="btnLogin" CssClass="nav-link text-dark" Text="Login" OnClick="btnLogin_Click" runat="server" />
+                            <asp:Button ID="btnlogout" CssClass="nav-link text-dark" Text="Logout" OnClick="btnLogin_Click" runat="server" />
                         </li>
-                    </ul>
-                </div>
+                    </ul> 
+                </div> 
             </nav>
         </header>
         <main role="row">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">
-                        STATUS
+                        <span style="font-size:25px">STATUS  </span>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt1" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <span style="padding:6px">
+                                        <div class="<%# Eval("RowType") %>"> <%# Eval("Status") +" : "+ Eval("Total") %></div>
+                                    </span>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
+                </div> 
+                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
                     <div class="boxDiv">
-                        LOCATION
+                        <span style="font-size:25px">LOCATION </span>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt2" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <span style="padding:6px">
+                                        <div class="<%# Eval("RowType") %>"> <%# Eval("Location") +" : "+ Eval("Total") %></div>
+                                    </span>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
-                    <div class="boxDiv">
-                        ASSET
+                    <div class="boxDiv"> 
+                        <span style="font-size:25px">ASSET </span>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt3" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <span style="padding:6px">
+                                        <div class="<%# Eval("RowType") %>"><%# Eval("Asset") +" : "+ Eval("Total") %></div>
+                                    </span>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-4 col-xs-12">
-                    <div class="boxDiv">
-                        TOTAL
+                <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
+                    <div class="boxDiv"> 
+                        <span style="font-size:25px">OWNER </span>
+                        <br /><br /><br />
+                        <div class="row">
+                            <asp:Repeater ID="Rpt4" runat="server">
+                                <HeaderTemplate></HeaderTemplate>
+                                <ItemTemplate>
+                                    <span style="padding:6px">
+                                        <div class="<%# Eval("RowType") %>"> <%# Eval("Asset_Owner") +" : "+ Eval("Total") %></div>
+                                    </span>
+                                </ItemTemplate>
+                                <FooterTemplate></FooterTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="ml-1 mt-5 mr-1 mb-5">
-                <br />
-                <br />
                 <asp:Repeater ID="RptDashboard" runat="server">
                     <HeaderTemplate>
                         <table id="myTable" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
@@ -199,8 +284,12 @@
                                     <td><%# Eval ("Cal_Period") %></td>
                                     <td><%# Eval ("Cal_ID") %></td>
                                     <td><%# Eval ("Cal_Supplier") %></td>
-                                    <td><img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" /></td>
-                                    <td><%# Eval ("Manual_Doc_Attachment") %></td>
+                                    <td>
+                                        <img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" />
+                                    </td>
+                                    <td>
+                                        <a href='<%# "http://localhost/File/" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
+                                    </td>
                                     <td><%# Eval ("By_Whom")  %></td>
                                     <td><%# Eval ("Last_Update") %></td>
                                     <td><%# Eval ("Remark") %></td>
