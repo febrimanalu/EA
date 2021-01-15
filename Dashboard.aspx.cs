@@ -111,7 +111,6 @@ namespace EA
             string FileExtension = Path.GetExtension(fpEP.FileName).Substring(1);
             string ContentType = fpEP.PostedFile.ContentType;
             string ImgPath = "File/" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + FileExtension;
-            string y = Path.GetFileName(fpEP.PostedFile.FileName);
             fpEP.SaveAs(Server.MapPath(ImgPath));
 
             //Manual Doc Attachment
@@ -154,7 +153,7 @@ namespace EA
                     cmd.Parameters.AddWithValue("@Cal_Period", txtCP.Text.Trim());
                     cmd.Parameters.AddWithValue("@Cal_ID", txtCID.Text.Trim());
                     cmd.Parameters.AddWithValue("@Cal_Supplier", txtCS.Text.Trim());
-                    cmd.Parameters.AddWithValue("@Equip_Picture", y);
+                    cmd.Parameters.AddWithValue("@Equip_Picture", ImgPath);
                     cmd.Parameters.AddWithValue("@Manual_Doc_Attachment", x);
                     cmd.Parameters.AddWithValue("@By_Whom", txtBW.Text.Trim());
                     cmd.Parameters.AddWithValue("@Last_Update", LastUpdate);

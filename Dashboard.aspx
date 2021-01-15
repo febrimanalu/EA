@@ -20,71 +20,32 @@
     <link href="another/Responsive/css/responsive.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/font/css/all.css" rel="stylesheet" />
 
-    <style>
-        #myImg{
-            border-radius:5px;
-            cursor:pointer;
-            transition:0.3s;
+    <style type="text/css">
+        .modal1{
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+            z-index: 100;
+            opacity: 0.8;
+            filter: alpha(opacity=60);
+            -moz-opacity: 0.8;
+            min-height: 100%;
         }
 
-        #myImg:hover {opacity:0.7;}
-
-        .zoom{
-            display:none;
-            position:fixed;
-            z-index:1;
-            padding-top:100px;
-            left:0;
-            top:0;
-            width:100%;
-            height:100%;
-            overflow:auto;
-            background-color:rgb(0,0,0);
-            background-color:rgba(0,0,0,0.9);
-        }
-
-        .zoom-content{
-            margin:auto;
-            display:block;
-            width:80%;
-            max-width:700px;
-        }
-
-        .zoom-content, #caption{
-            animation-name:zoom;
-            animation-duration:0.6s;
-        }
-
-        @keyframes zoom{
-            from{
-                transform:scale(0)
-            }
-            to{
-                transform:scale(1)
-            }
-        }
-
-        .close{
-            position:absolute;
-            top:15px;
-            right:35px;
-            color:#f1f1f1;
-            font-size:40px;
-            font-weight:bold;
-            transition:0.3s
-        }
-
-        .close:hover,
-        .close:focus{
-            color:#bbb;
-            text-decoration:none;
-            cursor:pointer;
-        }
-
-        @media only screen and (max-width:700px){
-            .zoom-content{
-                width:100%;
-            }
+        #divImage
+        {
+            display: none;
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: White;
+            height: 550px;
+            width: 600px;
+            padding: 3px;
+            border: solid 1px black;
         }
 
         .bd {
@@ -338,7 +299,7 @@
                                     <td><%# Eval ("Cal_ID") %></td>
                                     <td><%# Eval ("Cal_Supplier") %></td>
                                     <td>
-                                        <img id="myImg" src='<%# Eval("Equip_picture")%>' style="width:50px; height:auto" />
+                                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Equip_picture")%>' Width="50px" Height="40px" Style="cursor:pointer" OnClientClick="return LoadDiv(this.src);" />
                                     </td>
                                     <td>
                                         <a href='<%# "http://localhost/File/" + Eval ("Manual_Doc_Attachment") %>' target="_blank"><%# Eval ("Manual_Doc_Attachment") %></a> 
@@ -364,9 +325,20 @@
                         </table>
                     </FooterTemplate>
                 </asp:Repeater>
-                <div id="myModal" class="zoom">
-                    <span class="close">&times;</span>
-                    <img class="zoom-content" id="img"/>
+                <div id="divBackground" class="modal1"></div>
+                <div id="divImage">
+                    <table style="height:100%; width:100%">
+                        <tr>
+                            <td valign="middle" align="center">
+                                <img id="imgFull" alt="" src="" style="display:none; height:500px; width:590px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="bottom">
+                                <input id="btnClose" type="button" value="close" onclick="HideDiv()" />
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
@@ -921,20 +893,41 @@
             $("#ModalEdit #txtEditSN").attr("ReadOnly", true);;
         });
 
+        //zoom image
+        function LoadDiv(url) {
+            var img = new Image();
+            var bcg = document.getElementById("divBackground");
+            var image = document.getElementById("divImage");
+            var imgFull = document.getElementById("imgFull");
+            img.onload = function () {
+                imgFull.src = img.src;
+                imgFull.style.display = "block";
+            };
+            img.src = url;
+            var width = document.body.clientWidth;
+            if (document.body.clientHeight > document.body.clientHeight) {
+                bcg.style.height = document.body.clientHeight + "px";
+            } else {
+                bcg.style.height = document.body.scrollHeight + "px";
+            }
+            image.style.left = (width - 650) / 2 + "px";
+            image.style.top = "20px";
+            bcg.style.width = "100%"
 
-        //zoom gambar
-        var modal = document.getElementById("myModal");
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img");
-        img.onclick = function() {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
+            bcg.style.display = "block";
+            image.style.display = "block";
+            return false;
         }
-        var span = document.getElementsByClassName("close")[0];
 
-        span.onclick = function() {
-            modal.style.display = "none";
+        function HideDiv() {
+            var bcg = document.getElementById("divBackground");
+            var image = document.getElementById("divImage");
+            var imgFull = document.getElementById("imgFull");
+            if (bcg != null) {
+                bcg.style.display = "none";
+                image.style.display = "none";
+                imgFull.style.display = "none";
+            }
         }
     </script>
     </form>
