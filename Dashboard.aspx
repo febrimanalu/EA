@@ -157,7 +157,7 @@
                             </script>
                         </h6>&nbsp&nbsp&nbsp&nbsp
                         <li class="nav-item active">
-                            <asp:Button ID="btnlogout" CssClass="nav-link text-dark" Text="Logout" OnClick="btnlogout_Click" runat="server" />
+                            <asp:Button ID="btnlogout" CssClass="nav-link text-dark" Text="Logout" OnClick="btnlogout_Click" Style="background:white" runat="server" />
                         </li>
                     </ul> 
                 </div> 
