@@ -52,7 +52,8 @@
             background-color: white;
             background-repeat: no-repeat;
             background-size: auto;
-            height: 100vh;
+            width:100%;
+            min-height: 200px;
         }
 
         .boxDiv {
@@ -103,7 +104,7 @@
                 <a class="navbar-brand">
                     <img src="img/flex1.png" height="40" />
                 </a>
-                <div class="collapse navbar-collapse" id="Mynavbar">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto text-light">
                         <!-- Menampilkan Hari, Bulan dan Tahun -->
                         <h3>
@@ -790,7 +791,9 @@
                 </div>
             </div>
         </main>
-        <footer></footer>
+        <footer class="container">
+            <p style="text-align: center;">&copy; Febriana Manalu </p>
+        </footer>
 
 
     <!-- Optional JavaScript -->
