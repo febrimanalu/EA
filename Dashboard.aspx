@@ -12,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!--Bootstrap CSS-->
-    <link href="another/css/global.css" rel="stylesheet" />
     <link href="another/css/bootstrap.css" rel="stylesheet" />
     <link href="another/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="another/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" /> 
@@ -70,30 +69,35 @@
             background:yellow;
             padding-left:4px;
             padding-right:4px;
+            border-radius:8px;
         }
 
         .widget-two-warning{
             background:red;
             padding-left:4px;
             padding-right:4px;
+            border-radius:8px;
         }
 
         .widget-two-primary{
             background:skyblue;
             padding-left:4px;
             padding-right:4px;
+            border-radius:8px;
         }
 
         .widget-two-success{
             background:lightgreen;
             padding-left:4px;
             padding-right:4px;
+            border-radius:8px;
         }
 
         .widget-two-secondary{
             background:gray;
             padding-left:4px;
             padding-right:4px;
+            border-radius:8px;
         }
     </style>
 </head>
@@ -481,8 +485,8 @@
                                                 <asp:Label ID="Label15" runat="server" Text="Asset_Owner"></asp:Label>
                                                 <asp:DropDownList ID="ddlAO" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
-                                                    <asp:ListItem>Consigned</asp:ListItem>
-                                                    <asp:ListItem>In-House</asp:ListItem>
+                                                    <asp:ListItem>CONSIGNED</asp:ListItem>
+                                                    <asp:ListItem>IN-HOUSE</asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
@@ -829,8 +833,7 @@
                     }, 'print'],
                 dom:
                     "<'row'<'col-md-4'l><'col-md-4'B><'col-md-4'f>>" +
-                    "<'row'<'col-md-12'tr>>" +
-                    "<'row'<'col-md-7'i><'col-md-5'p>>"
+                    "<'row'<'col-md-12'tr>>" 
             });
 
             table.buttons().container()

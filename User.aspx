@@ -12,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!--Bootstrap CSS-->
-    <link href="another/css/global.css" rel="stylesheet" />
     <link href="another/css/bootstrap.css" rel="stylesheet" />
     <link href="another/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="another/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" /> 

@@ -10,7 +10,7 @@ namespace EA.Classes
 {
     public class ClsLogin
     {
-        public static DataTable DtLogin(string username, string password)
+        public static DataTable DtLogin(string no_badge, string password)
         {
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(ClsModule.conn.ToString());
@@ -20,7 +20,7 @@ namespace EA.Classes
             con.Open();
             cmd.Connection = con;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Login where username='" + username + "' and password='" + password + "'";
+            cmd.CommandText = "select * from Login where no_badge='" + no_badge + "' and password='" + password + "'";
             da.SelectCommand = cmd;
             da.Fill(dt);
             con.Close();

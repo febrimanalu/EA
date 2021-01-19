@@ -22,13 +22,13 @@
             <div class="col-md-4 col-sm-12">
                 <form class="container-form text-center" runat="server">
                     <img src="img/flex.png" width="130" height="70" /><br />
-                    &nbsp;<h2 class="text-center">Asset Inventory</h2>
+                    &nbsp;<h2 class="text-center">Equipment Asset</h2>
                     &nbsp;<div class="form-group text-center">
-                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="Username"></asp:TextBox>
+                        <asp:TextBox ID="txtNo_badge" runat="server" CssClass="form-control" placeholder="No_badge"></asp:TextBox>
                     </div>
                     <div class="form-group text-center">
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        <asp:Button ID="btnLogin" CssClass="btn btn-info mt-4 font-weight-bold text-white" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" CssClass="btn btn-primary mt-4 font-weight-bold text-white" runat="server" Text="Login" OnClick="btnLogin_Click" />
                     </div>
                     <asp:Label ID="lblWarning" CssClass="text-danger font-weight-bold" runat="server" Text=""></asp:Label>
                 </form>                

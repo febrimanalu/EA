@@ -20,7 +20,7 @@ namespace EA
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             DataTable dtLogin = new DataTable();
-            dtLogin = ClsLogin.DtLogin(txtUsername.Text, txtPassword.Text);
+            dtLogin = ClsLogin.DtLogin(txtNo_badge.Text, txtPassword.Text);
 
             if (dtLogin.Rows.Count != 0)
             {
