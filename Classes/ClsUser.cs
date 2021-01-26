@@ -22,7 +22,7 @@ namespace EA.Classes
                 Sqlconn.Open();
                 Sqlcmd.Connection = Sqlconn;
                 Sqlcmd.CommandType = CommandType.Text;
-                Sqlcmd.CommandText = "select * from Dashboard order by SN";
+                Sqlcmd.CommandText = "select * from fix order by SN";
                 Sqlda.SelectCommand = Sqlcmd;
                 Sqlda.Fill(DtTampil);
                 Sqlconn.Close();
