@@ -104,10 +104,11 @@
 <body class="bd">
     <form id="form1" runat="server">
         <header>
-            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary">
+            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary justify-content-center align-items-start">
                 <a class="navbar-brand">
                     <img src="img/flex1.png" height="40" />
                 </a>
+                <span class="navbar-brand position-absolute text-light"><h2>Equipment Asset Dashboard</h2></span>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto text-light">
                         <!-- Menampilkan Hari, Bulan dan Tahun -->
@@ -277,9 +278,7 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                                 <tr>
-                                    <td>
-                                        <a href='<%# "Dashboard.aspx?ID=" + Eval ("SN")  %>' target="_blank"><%# Eval ("SN") %></a>
-                                    </td>
+                                    <td><%# Eval ("SN") %></td>
                                     <td><%# Eval ("Description") %></td>
                                     <td><%# Eval ("Family") %></td>
                                     <td><%# Eval ("Location") %></td>
@@ -333,7 +332,7 @@
                 </div>
             </div>
         </main>
-        <footer class="container">
+        <footer class="foot">
             <p style="text-align: center;">&copy; Febriana Manalu </p>
         </footer>
     <!-- Optional JavaScript -->

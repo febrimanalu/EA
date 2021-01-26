@@ -10,13 +10,24 @@
     <!--Required meta tags-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    
     <!--Bootstrap CSS-->
     <link href="another/css/global.css" rel="stylesheet" />
     <link href="another/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .bg {
+            background: #009ADD;
+            width: 100%;
+            min-height: 200px;
+        }
+
+        .btnlogin {
+            background: #009ADD;
+        }
+    </style>
 </head>
-<body>
-    <div class="container-fluid bg">
+<body class="bg">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 col-sm-12"></div>
             <div class="col-md-4 col-sm-12">
@@ -28,7 +39,7 @@
                     </div>
                     <div class="form-group text-center">
                         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-                        <asp:Button ID="btnLogin" CssClass="btn btn-primary mt-4 font-weight-bold text-white" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" CssClass="btn btnlogin mt-4 font-weight-bold text-white" runat="server" Text="Login" OnClick="btnLogin_Click" />
                     </div>
                     <asp:Label ID="lblWarning" CssClass="text-danger font-weight-bold" runat="server" Text=""></asp:Label>
                 </form>                
@@ -38,7 +49,7 @@
             </div>
         </div>
 
-    <!-- JavaScript JS -->
+   <!-- JavaScript JS -->
     <script src="another/js/bootstrap.min.js"></script>
 </body>
 </html>

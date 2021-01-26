@@ -16,6 +16,7 @@
     <link href="another/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="another/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" /> 
     <link href="another/Buttons/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+    <link href="another/Responsive/css/responsive.dataTables.min.css" rel="stylesheet" />
     <link href="another/Responsive/css/responsive.bootstrap4.min.css" rel="stylesheet" />
     <link href="another/font/css/all.css" rel="stylesheet" />
 
@@ -104,10 +105,11 @@
 <body class="bd">
     <form id="form1" runat="server">
         <header>
-            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary">
+            <nav class="navbar navbar-expand-sm navbar-color mb-1 bg-primary justify-content-center align-items-start">
                 <a class="navbar-brand">
                     <img src="img/flex1.png" height="40" />
                 </a>
+                <span class="navbar-brand position-absolute text-light"><h2>Equipment Asset Dashboard</h2></span>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto text-light">
                         <!-- Menampilkan Hari, Bulan dan Tahun -->
@@ -280,9 +282,7 @@
                     </HeaderTemplate>
                     <ItemTemplate>
                                 <tr>
-                                    <td>
-                                        <a href='<%# "Dashboard.aspx?ID=" + Eval ("SN")  %>' target="_blank"><%# Eval ("SN") %></a>
-                                    </td>
+                                    <td><%# Eval ("SN") %></td>
                                     <td><%# Eval ("Description") %></td>
                                     <td><%# Eval ("Family") %></td>
                                     <td><%# Eval ("Location") %></td>
@@ -364,13 +364,13 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label1" runat="server" Text="SN"></asp:Label>
-                                                <asp:TextBox ID="txtSN" CssClass="form-control" placeholder="SZFIT0012" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtSN" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label2" runat="server" Text="Description"></asp:Label>
-                                                <asp:TextBox ID="txtDesc" CssClass="form-control" placeholder="BOOK3 ICT ATV32B BTOOTH ( EOL )" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtDesc" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -378,7 +378,7 @@
                                                 <asp:Label ID="Label3" runat="server" Text="Family"></asp:Label>
                                                 <asp:DropDownList ID="ddlFam" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
-                                                    <asp:ListItem>BOOK3</asp:ListItem>
+                                                    <asp:ListItem>SPECTRUM</asp:ListItem>
                                                     <asp:ListItem>BUS BOARD</asp:ListItem>
                                                     <asp:ListItem>CARROS</asp:ListItem>
                                                 </asp:DropDownList>
@@ -400,7 +400,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label5" runat="server" Text="Line"></asp:Label>
-                                                <asp:TextBox ID="txtLi" CssClass="form-control" placeholder="Line 28" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtLi" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -418,31 +418,31 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label7" runat="server" Text="Owner_Engineer"></asp:Label>
-                                                <asp:TextBox ID="txtOE" CssClass="form-control" placeholder="Winner" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtOE" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label8" runat="server" Text="RF_ID"></asp:Label>
-                                                <asp:TextBox ID="txtRFID" CssClass="form-control" placeholder="702370432" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label9" runat="server" Text="CO"></asp:Label>
-                                                <asp:TextBox ID="txtCO" CssClass="form-control" placeholder="10035808 or CO N/A" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtCO" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label10" runat="server" Text="EAM"></asp:Label>
-                                                <asp:TextBox ID="txtEAM" CssClass="form-control" placeholder="896535 or EAM N/A" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtEAM" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label11" runat="server" Text="Job_No"></asp:Label>
-                                                <asp:TextBox ID="txtJN" CssClass="form-control" placeholder="53255/08/14" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtJN" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -474,7 +474,7 @@
                                                 <asp:Label ID="Label14" runat="server" Text="Manufacturer"></asp:Label>
                                                 <asp:DropDownList ID="ddlManu" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
-                                                    <asp:ListItem>SEICO</asp:ListItem>
+                                                    <asp:ListItem>SPECTRUM</asp:ListItem>
                                                     <asp:ListItem>CUSTOMIZE</asp:ListItem>
                                                     <asp:ListItem>PETRACARBON TEST</asp:ListItem>
                                                 </asp:DropDownList>
@@ -504,7 +504,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label17" runat="server" Text="PM_Period"></asp:Label>
-                                                <asp:TextBox ID="txtPMP" CssClass="form-control" placeholder="2 month" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtPMP" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -520,19 +520,19 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label19" runat="server" Text="Cal_Period"></asp:Label>
-                                                <asp:TextBox ID="txtCP" CssClass="form-control" placeholder="1 year" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtCP" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label20" runat="server" Text="Cal_ID"></asp:Label>
-                                                <asp:TextBox ID="txtCID" CssClass="form-control" placeholder="C206" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtCID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label21" runat="server" Text="Cal_Supplier"></asp:Label>
-                                                <asp:TextBox ID="txtCS" CssClass="form-control" placeholder="Berca" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtCS" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -550,7 +550,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <asp:Label ID="Label24" runat="server" Text="By_Whom"></asp:Label>
-                                                <asp:TextBox ID="txtBW" CssClass="form-control" placeholder="userID" runat="server"></asp:TextBox>
+                                                <asp:TextBox ID="txtBW" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -602,7 +602,7 @@
                                                 <asp:Label ID="Label28" runat="server" Text="Family"></asp:Label>
                                                 <asp:DropDownList ID="ddlEditFam" CssClass="form-control" runat="server">
                                                     <asp:ListItem>--Select Status--</asp:ListItem>
-                                                    <asp:ListItem>BOOK3</asp:ListItem>
+                                                    <asp:ListItem>SPECTRUM</asp:ListItem>
                                                     <asp:ListItem>BUS BOARD</asp:ListItem>
                                                     <asp:ListItem>CARROS</asp:ListItem>
                                                 </asp:DropDownList>
@@ -795,13 +795,12 @@
                 </div>
             </div>
         </main>
-        <footer class="container">
+        <footer class="foot">
             <p style="text-align: center;">&copy; Febriana Manalu </p>
         </footer>
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="another/js/jquery-3.5.1.js"></script>
     <script src="another/js/jquery-3.5.1.slim.min.js"></script>
     <script src="another/js/bootstrap.bundle.min.js"></script>
 
@@ -833,7 +832,8 @@
                     }, 'print'],
                 dom:
                     "<'row'<'col-md-4'l><'col-md-4'B><'col-md-4'f>>" +
-                    "<'row'<'col-md-12'tr>>" 
+                    "<'row'<'col-md-12'tr>>" +
+                    "<'row'<'col-md-7'i><'col-md-5'p>>"
             });
 
             table.buttons().container()
