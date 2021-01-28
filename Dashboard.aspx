@@ -256,7 +256,7 @@
                                     <th>Line</th>
                                     <th>Status</th>
                                     <th>Owner_Engineer</th>
-                                    <th>RF_ID</th>
+                                    <th>RFID</th>
                                     <th>CO</th>
                                     <th>EAM</th>
                                     <th>Job_No</th>
@@ -289,7 +289,7 @@
                                     <td><%# Eval ("Line") %></td>
                                     <td><%# Eval ("Status") %></td>
                                     <td><%# Eval ("Owner_Engineer") %></td>
-                                    <td><%# Eval ("RF_ID") %></td>
+                                    <td><%# Eval ("RFID") %></td>
                                     <td><%# Eval ("CO") %></td>
                                     <td><%# Eval ("EAM") %></td>
                                     <td><%# Eval ("Job_No") %></td>
@@ -315,7 +315,7 @@
                                     <td>
                                          &nbsp
                                         <a id="Edit_data" data-toggle="modal" data-target="#ModalEdit" onclick="Edit_data" class="fas fa-edit" data-id="<%# Eval("SN") %>" data-nama="<%# Eval("Description") %>" data-fam="<%# Eval("Family") %>"
-                                        data-loc="<%# Eval("Location") %>" data-li="<%# Eval("Line") %>" data-status="<%# Eval("Status") %>" data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RF_ID") %>" data-co="<%# Eval("CO") %>"
+                                        data-loc="<%# Eval("Location") %>" data-li="<%# Eval("Line") %>" data-status="<%# Eval("Status") %>" data-oe="<%# Eval("Owner_Engineer") %>" data-rfid="<%# Eval("RFID") %>" data-co="<%# Eval("CO") %>"
                                         data-eam="<%# Eval("EAM") %>" data-jn="<%# Eval("Job_No") %>" data-agid="<%# Eval("Asset_Group_ID") %>" data-agd="<%# Eval("Asset_Group_Desc") %>" data-manu="<%# Eval("Manufacturer") %>" data-ao="<%# Eval("Asset_Owner") %>"
                                         data-pm="<%# Eval("PM") %>" data-pmp="<%# Eval("PM_Period") %>" data-cal="<%# Eval("Calibration") %>" data-cp="<%# Eval("Cal_Period") %>" data-cid="<%# Eval("Cal_ID") %>" data-cs="<%# Eval("Cal_Supplier") %>"
                                         data-ep="<%# Eval("Equip_picture") %>" data-mda="<%# Eval("Manual_Doc_Attachment") %>" data-bw="<%# Eval("By_Whom") %>" data-lu="<%# Eval("Last_Update") %>" data-re="<%# Eval("Remark") %>">
@@ -423,7 +423,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label8" runat="server" Text="RF_ID"></asp:Label>
+                                                <asp:Label ID="Label8" runat="server" Text="RFID"></asp:Label>
                                                 <asp:TextBox ID="txtRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -647,7 +647,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <asp:Label ID="Label33" runat="server" Text="RF_ID"></asp:Label>
+                                                <asp:Label ID="Label33" runat="server" Text="RFID"></asp:Label>
                                                 <asp:TextBox ID="txtEditRFID" CssClass="form-control" runat="server"></asp:TextBox>
                                             </div>
                                         </div>

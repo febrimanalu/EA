@@ -127,8 +127,8 @@ namespace EA
             string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
             using (SqlConnection con = new SqlConnection(Koneksi))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO fix (SN, Description, Family, Location, Line, Status, Owner_Engineer, RF_ID, CO, EAM, Job_No, Asset_Group_ID, Asset_Group_Desc, Manufacturer, Asset_Owner, PM, PM_Period, Calibration, Cal_Period, Cal_ID, Cal_Supplier, Equip_Picture, Manual_Doc_Attachment, By_Whom, Last_Update, Remark )" + "VALUES" +
-                      "(@SN, @Description, @Family, @Location, @Line, @Status, @Owner_Engineer, @RF_ID, @CO, @EAM, @Job_No, @Asset_Group_ID, @Asset_Group_Desc, @Manufacturer, @Asset_Owner, @PM, @PM_Period, @Calibration, @Cal_Period, @Cal_ID, @Cal_Supplier, @Equip_Picture, @Manual_Doc_Attachment, @By_Whom, @Last_Update, @Remark)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Dashboard (SN, Description, Family, Location, Line, Status, Owner_Engineer, RFID, CO, EAM, Job_No, Asset_Group_ID, Asset_Group_Desc, Manufacturer, Asset_Owner, PM, PM_Period, Calibration, Cal_Period, Cal_ID, Cal_Supplier, Equip_Picture, Manual_Doc_Attachment, By_Whom, Last_Update, Remark )" + "VALUES" +
+                      "(@SN, @Description, @Family, @Location, @Line, @Status, @Owner_Engineer, @RFID, @CO, @EAM, @Job_No, @Asset_Group_ID, @Asset_Group_Desc, @Manufacturer, @Asset_Owner, @PM, @PM_Period, @Calibration, @Cal_Period, @Cal_ID, @Cal_Supplier, @Equip_Picture, @Manual_Doc_Attachment, @By_Whom, @Last_Update, @Remark)"))
                 {
                     cmd.Connection = con;
                     cmd.CommandType = CommandType.Text;
@@ -139,7 +139,7 @@ namespace EA
                     cmd.Parameters.AddWithValue("@Line", txtLi.Text.Trim());
                     cmd.Parameters.AddWithValue("@Status", ddlS.SelectedValue.Trim());
                     cmd.Parameters.AddWithValue("@Owner_Engineer", txtOE.Text.Trim());
-                    cmd.Parameters.AddWithValue("@RF_ID", txtRFID.Text.Trim());
+                    cmd.Parameters.AddWithValue("@RFID", txtRFID.Text.Trim());
                     cmd.Parameters.AddWithValue("@CO", txtCO.Text.Trim());
                     cmd.Parameters.AddWithValue("@EAM", txtEAM.Text.Trim());
                     cmd.Parameters.AddWithValue("@Job_No", txtJN.Text.Trim());
@@ -212,7 +212,7 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RFID=@RFID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
@@ -223,7 +223,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
-                        cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@RFID", txtEditRFID.Text.Trim());
                         cmd.Parameters.AddWithValue("@CO", txtEditCO.Text.Trim());
                         cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
@@ -263,7 +263,7 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RFID=@RFID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
@@ -274,7 +274,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
-                        cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@RFID", txtEditRFID.Text.Trim());
                         cmd.Parameters.AddWithValue("@CO", txtEditCO.Text.Trim());
                         cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
@@ -320,7 +320,7 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RFID=@RFID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, Equip_Picture= @Equip_Picture, Manual_Doc_Attachment=@Manual_Doc_Attachment, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
@@ -331,7 +331,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
-                        cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@RFID", txtEditRFID.Text.Trim());
                         cmd.Parameters.AddWithValue("@CO", txtEditCO.Text.Trim());
                         cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());
@@ -363,7 +363,7 @@ namespace EA
                 string Koneksi = ConfigurationManager.ConnectionStrings["Koneksi"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(Koneksi))
                 {
-                    using (SqlCommand cmd = new SqlCommand("UPDATE fix SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RF_ID=@RF_ID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
+                    using (SqlCommand cmd = new SqlCommand("UPDATE Dashboard SET Description=@Description, Family=@Family, Location=@Location, Line=@Line, Status=@Status, Owner_Engineer=@Owner_Engineer, RFID=@RFID, CO=@CO, EAM=@EAM, Job_No=@Job_No, Asset_Group_ID=@Asset_Group_ID, Asset_Group_Desc= @Asset_Group_Desc, Manufacturer=@Manufacturer, Asset_Owner=@Asset_Owner, PM=@PM, PM_Period=@PM_Period, Calibration=@Calibration, Cal_Period=@Cal_Period, Cal_ID=@Cal_ID, Cal_Supplier=@Cal_Supplier, By_Whom=@By_Whom, Last_Update=@Last_Update, Remark=@Remark WHERE SN=@SN"))
                     {
                         cmd.Connection = con;
                         cmd.CommandType = CommandType.Text;
@@ -374,7 +374,7 @@ namespace EA
                         cmd.Parameters.AddWithValue("@Line", txtEditLi.Text.Trim());
                         cmd.Parameters.AddWithValue("@Status", ddlEditS.SelectedValue.Trim());
                         cmd.Parameters.AddWithValue("@Owner_Engineer", txtEditOE.Text.Trim()); ;
-                        cmd.Parameters.AddWithValue("@RF_ID", txtEditRFID.Text.Trim());
+                        cmd.Parameters.AddWithValue("@RFID", txtEditRFID.Text.Trim());
                         cmd.Parameters.AddWithValue("@CO", txtEditCO.Text.Trim());
                         cmd.Parameters.AddWithValue("@EAM", txtEditEAM.Text.Trim());
                         cmd.Parameters.AddWithValue("@Job_No", txtEditJN.Text.Trim());

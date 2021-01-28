@@ -253,7 +253,7 @@
                                     <th>BU_Line</th>
                                     <th>Status</th>
                                     <th>Owner_Engineer</th>
-                                    <th>RF_ID</th>
+                                    <th>RFID</th>
                                     <th>CO</th>
                                     <th>EAM</th>
                                     <th>Job_No</th>
@@ -285,7 +285,7 @@
                                     <td><%# Eval ("Line") %></td>
                                     <td><%# Eval ("Status") %></td>
                                     <td><%# Eval ("Owner_Engineer") %></td>
-                                    <td><%# Eval ("RF_ID") %></td>
+                                    <td><%# Eval ("RFID") %></td>
                                     <td><%# Eval ("CO") %></td>
                                     <td><%# Eval ("EAM") %></td>
                                     <td><%# Eval ("Job_No") %></td>
